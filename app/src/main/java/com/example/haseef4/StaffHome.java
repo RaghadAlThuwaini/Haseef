@@ -14,7 +14,7 @@ public class StaffHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_staff_home);
         ImageView statistic=findViewById(R.id.statistic);
-        ImageView statistic_icons=findViewById(R.id.statistic_icons);
+        ImageView statistic_icons=findViewById(R.id.sta);
 
         statistic.setOnClickListener(new View.OnClickListener() {
             @Override

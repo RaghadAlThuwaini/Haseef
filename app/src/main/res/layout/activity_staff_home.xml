@@ -84,7 +84,7 @@
         app:srcCompat="@drawable/product" />
 
     <ImageView
-        android:id="@+id/statistic_icons"
+        android:id="@+id/sta"
         android:layout_width="110dp"
         android:layout_height="103dp"
         app:layout_constraintBottom_toBottomOf="parent"

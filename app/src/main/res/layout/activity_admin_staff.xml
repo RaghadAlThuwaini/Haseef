@@ -35,7 +35,7 @@
         app:srcCompat="@drawable/image1" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/statistic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,7 +71,7 @@
         app:srcCompat="@drawable/product" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/statistic_icons"
         android:layout_width="123dp"
         android:layout_height="128dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -115,7 +115,7 @@
         app:layout_constraintVertical_bias="0.768" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/sta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Statstics"
