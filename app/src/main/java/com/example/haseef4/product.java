@@ -30,7 +30,7 @@ public class product extends AppCompatActivity {
         tabs.setupWithViewPager(viewPager);
         ImageView back_icons = findViewById(R.id.back);
 
-//tests
+//testss
         back_icons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
