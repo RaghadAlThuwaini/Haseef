@@ -11,7 +11,7 @@
         layout="@layout/toolbar" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/restock"
         android:layout_width="249dp"
         android:layout_height="141dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/image" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,7 +46,7 @@
         app:srcCompat="@drawable/image2" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/restock_icons"
         android:layout_width="71dp"
         android:layout_height="57dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -72,7 +72,7 @@
         app:layout_constraintVertical_bias="0.199" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/product_icons"
         android:layout_width="130dp"
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
