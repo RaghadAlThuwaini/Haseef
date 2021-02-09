@@ -1,5 +1,6 @@
 package com.example.haseef4;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -12,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.haseef4.ui.main.SectionsPagerAdapter;
 
@@ -26,7 +29,16 @@ public class restock extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+        ImageView back_icons = findViewById(R.id.back);
+
+
+        back_icons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(restock.this,StaffHome.class));
+            }
+        });
+    }
 
 
     }
-}

@@ -11,12 +11,13 @@
         android:theme="@style/Theme.Haseef4">
         <activity
             android:name=".restock"
-            android:label="@string/title_activity_restock"
-            android:theme="@style/Theme.Haseef4.NoActionBar"></activity>
+
+            />
+<!--       // android:label="@string/title_activity_restock"-->
         <activity
-            android:name=".product"
-            android:label="@string/title_activity_product"
-            android:theme="@style/Theme.Haseef4.NoActionBar" />
+            android:name=".product"/>
+<!--            android:label="@string/title_activity_product"-->
+
         <activity android:name=".popUpWindow" />
         <activity android:name=".statistic" />
         <activity android:name=".StaffHome" />
