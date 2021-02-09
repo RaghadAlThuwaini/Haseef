@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Haseef4">
-        <activity android:name=".popUpWindow"></activity>
+        <activity
+            android:name=".restock"
+            android:label="@string/title_activity_restock"
+            android:theme="@style/Theme.Haseef4.NoActionBar"></activity>
+        <activity
+            android:name=".product"
+            android:label="@string/title_activity_product"
+            android:theme="@style/Theme.Haseef4.NoActionBar" />
+        <activity android:name=".popUpWindow" />
         <activity android:name=".statistic" />
         <activity android:name=".StaffHome" />
         <activity android:name=".AdminHome" />

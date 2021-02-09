@@ -4,4 +4,8 @@
         <item> User </item>
         <item> Admin </item>
     </string-array>
+    <string name="title_activity_product">product</string>
+    <string name="tab_text_1">dairy products</string>
+    <string name="tab_text_2">juices</string>
+    <string name="title_activity_restock">restock</string>
 </resources>
