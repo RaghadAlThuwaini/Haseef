@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.haseef4.displayProducts.product;
+//import com.example.haseef4.displayRestock.restock;
+
 public class StaffHome extends AppCompatActivity {
 
     @Override
@@ -32,11 +35,7 @@ public class StaffHome extends AppCompatActivity {
 //                goTostatistic();
 //            }
 //        });
-//    }
-//    private void goTostatistic(){
-//        Intent intent = new Intent(this, statistic.class);
-//        startActivity(intent);
-//    }
+
 
         product.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,30 +51,35 @@ public class StaffHome extends AppCompatActivity {
             }
         });
 
-        restock.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goTorestock();
-            }
-        });
-
-        restock_icons.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goTorestock();
-            }
-        });
+//        restock.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                goTorestock();
+//            }
+//        });
+//
+//        restock_icons.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                goTorestock();
+//            }
+//        });
     }
 
+        public void goToproduct(){
+            Intent intent = new Intent(this, product.class);
+            startActivity(intent);
+        }
 
-        private void goToproduct(){
-     Intent intent = new Intent(this, product.class);
-          startActivity(intent);
-         }
+//        public void goTorestock(){
+//            Intent intent = new Intent(this, restock.class);
+//            startActivity(intent);
+//        }
 
-    private void goTorestock(){
-        Intent intent = new Intent(this, restock.class);
-        startActivity(intent);
-    }
-    }
+//        public void goTostatistic(){
+//        Intent intent = new Intent(this, statistic.class);
+//        startActivity(intent);
+//        }
+
+}
 
