@@ -1,9 +1,10 @@
 package com.example.haseef4.displayProducts;
 
 public class productModel {
-    String name, restock, image;
+    String name, image;
+    Long restock;
 
-    public productModel(String name, String restock, String image) {
+    public productModel(String name, Long restock, String image) {
         this.name = name;
         this.restock = restock;
         this.image = image;
@@ -28,11 +29,11 @@ public class productModel {
         this.name = name;
     }
 
-    public String getRestock() {
+    public Long getRestock() {
         return restock;
     }
 
-    public void setRestock(String restock) {
+    public void setRestock(Long restock) {
         this.restock = restock;
     }
 }

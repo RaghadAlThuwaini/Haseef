@@ -18,15 +18,17 @@
 <!--       // android:label="@string/title_activity_restock"-->
         <activity
             android:name=".displayProducts.product"/>
+        <activity
+            android:name=".displayRestock.restock"/>
 <!--            android:label="@string/title_activity_product"-->
         <activity android:name=".displayProducts.productfragment1"
             tools:ignore="Instantiatable" />
         <activity android:name=".displayProducts.productfragment2"
             tools:ignore="Instantiatable" />
-<!--        <activity android:name=".displayRestock.restockfragment1"-->
-<!--            tools:ignore="Instantiatable" />-->
-<!--        <activity android:name=".displayRestock.restockfragment2"-->
-<!--            tools:ignore="Instantiatable" />-->
+        <activity android:name=".displayRestock.restockfragment1"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".displayRestock.restockfragment2"
+            tools:ignore="Instantiatable" />
         <activity android:name=".popUpWindow" />
         <activity android:name=".statistic" />
         <activity android:name=".StaffHome" />

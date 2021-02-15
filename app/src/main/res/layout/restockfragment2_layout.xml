@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".restockfragment2">
+    tools:context=".displayRestock.restockfragment2">
 
     <ListView
         android:layout_marginTop="110dp"

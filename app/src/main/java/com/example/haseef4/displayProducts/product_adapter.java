@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class product_adapter extends ArrayAdapter<productModel> {
     TextView productName, productRestock;
     ImageView imageView;
-    public product_adapter(Context context, ArrayList<productModel> products){
+    public product_adapter (Context context, ArrayList<productModel> products){
         super(context, 0, products);
     }
 
@@ -30,15 +30,15 @@ public class product_adapter extends ArrayAdapter<productModel> {
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_product, parent, false);
         }
-            productName = (TextView) convertView.findViewById(R.id.productName);
-            productRestock = (TextView) convertView.findViewById(R.id.productRestock);
-            imageView = convertView.findViewById(R.id.productImage);
+        productName = (TextView) convertView.findViewById(R.id.productName);
+        productRestock = (TextView) convertView.findViewById(R.id.productRestock);
+        imageView = convertView.findViewById(R.id.productImage);
 
         productName.setText(P.getName());
-        productRestock.setText(P.getRestock());
+        productRestock.setText(String.valueOf(P.getRestock()));
         Picasso.get().load(P.getImage()).into(imageView);
 
-            return convertView;
+        return convertView;
 
     }
 }
