@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.haseef4.displayProducts.product;
-//import com.example.haseef4.displayRestock.restock;
+import com.example.haseef4.displayRestock.restock;
 
 public class StaffHome extends AppCompatActivity {
 
@@ -51,19 +51,19 @@ public class StaffHome extends AppCompatActivity {
             }
         });
 
-//        restock.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                goTorestock();
-//            }
-//        });
-//
-//        restock_icons.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                goTorestock();
-//            }
-//        });
+        restock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goTorestock();
+            }
+        });
+
+        restock_icons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goTorestock();
+            }
+        });
     }
 
         public void goToproduct(){
@@ -71,10 +71,10 @@ public class StaffHome extends AppCompatActivity {
             startActivity(intent);
         }
 
-//        public void goTorestock(){
-//            Intent intent = new Intent(this, restock.class);
-//            startActivity(intent);
-//        }
+        public void goTorestock(){
+            Intent intent = new Intent(this, restock.class);
+            startActivity(intent);
+        }
 
 //        public void goTostatistic(){
 //        Intent intent = new Intent(this, statistic.class);
