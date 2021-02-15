@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "399417925138",
+    "firebase_url": "https://haseef-34e27-default-rtdb.firebaseio.com",
+    "project_id": "haseef-34e27",
+    "storage_bucket": "haseef-34e27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399417925138:android:06c45e712d3c72716382cb",
+        "android_client_info": {
+          "package_name": "com.example.haseef4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "399417925138-kkaopstlbp244epucq33cdmhp1jblqe6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDawYfK8k2VuPaq6PqPbUVsq7AcMfYJFJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "399417925138-kkaopstlbp244epucq33cdmhp1jblqe6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
