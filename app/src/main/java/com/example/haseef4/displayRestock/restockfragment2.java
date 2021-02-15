@@ -33,7 +33,7 @@ public class restockfragment2 extends Fragment {
         productList = (ListView) view.findViewById(R.id.juices_restock_view);
         juicesPlist = new ArrayList<>();
 
-        JPref = FirebaseDatabase.getInstance().getReference().child("products").child("Juices");
+        JPref = FirebaseDatabase.getInstance().getReference().child("products").child("Juices");//
         Query getRestockProducts = JPref.orderByChild("restock").endAt(5);
         getRestockProducts.addValueEventListener(new ValueEventListener() {
             @Override
