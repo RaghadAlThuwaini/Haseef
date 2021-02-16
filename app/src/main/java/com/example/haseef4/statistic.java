@@ -30,12 +30,13 @@ public class statistic extends AppCompatActivity {
         back_icons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                type = Login.cu;
-                if(type.equals("Admin")) {
-                    startActivity(new Intent(statistic.this, AdminHome.class));
-                }
-                else
-                    startActivity(new Intent(statistic.this, StaffHome.class));
+                finish();
+//                type = Login.cu;
+//                if(type.equals("Admin")) {
+//                    startActivity(new Intent(statistic.this, AdminHome.class));
+//                }
+//                else
+//                    startActivity(new Intent(statistic.this, StaffHome.class));
             }
         });
     }
