@@ -5,7 +5,7 @@ public class Users {
     private String id;
     private String email;
     private String password;
-    private String type;
+    private static String type;
 
     public Users(){
 
@@ -32,7 +32,7 @@ public class Users {
         this.id = id;
     }
 
-    public String getType() {
+    public static String getType() {
         return type;
     }
 

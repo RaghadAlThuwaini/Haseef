@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import com.example.haseef4.Login;   //عشان نعرف الcurrent user ونوجهه للهوم حقه لما يضغط على سهم back
 
 public class statistic extends AppCompatActivity {
-
+    String type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +30,13 @@ public class statistic extends AppCompatActivity {
         back_icons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(statistic.this,StaffHome.class));
+                finish();
+//                type = Login.cu;
+//                if(type.equals("Admin")) {
+//                    startActivity(new Intent(statistic.this, AdminHome.class));
+//                }
+//                else
+//                    startActivity(new Intent(statistic.this, StaffHome.class));
             }
         });
     }

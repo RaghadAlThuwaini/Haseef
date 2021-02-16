@@ -23,7 +23,7 @@
         app:srcCompat="@drawable/image" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/productAdmin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,7 +35,7 @@
         app:srcCompat="@drawable/image1" />
 
     <ImageView
-        android:id="@+id/statistic"
+        android:id="@+id/statisticAdmin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,7 +59,7 @@
         app:srcCompat="@drawable/membership" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/productIconsAdmin"
         android:layout_width="150dp"
         android:layout_height="136dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,7 +71,7 @@
         app:srcCompat="@drawable/product" />
 
     <ImageView
-        android:id="@+id/statistic_icons"
+        android:id="@+id/statisticIconsAdmin"
         android:layout_width="123dp"
         android:layout_height="128dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -115,7 +115,7 @@
         app:layout_constraintVertical_bias="0.768" />
 
     <TextView
-        android:id="@+id/sta"
+        android:id="@+id/statistic_icons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Statstics"

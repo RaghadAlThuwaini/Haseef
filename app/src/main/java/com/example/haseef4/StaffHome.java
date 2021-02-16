@@ -23,18 +23,18 @@ public class StaffHome extends AppCompatActivity {
         ImageView restock = findViewById(R.id.restock);
         ImageView restock_icons = findViewById(R.id.restock_icons);
 
-//        statistic.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                goTostatistic();
-//            }
-//        });
-//        statistic_icons.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                goTostatistic();
-//            }
-//        });
+        statistic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goTostatistic();
+            }
+        });
+        statistic_icons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goTostatistic();
+            }
+        });
 
 
         product.setOnClickListener(new View.OnClickListener() {
@@ -67,19 +67,17 @@ public class StaffHome extends AppCompatActivity {
     }
 
         public void goToproduct(){
-            Intent intent = new Intent(this, product.class);
-            startActivity(intent);
+            startActivity(new Intent(this, product.class));
         }
 
         public void goTorestock(){
-            Intent intent = new Intent(this, restock.class);
-            startActivity(intent);
+            startActivity(new Intent(this, restock.class));
         }
 
-//        public void goTostatistic(){
-//        Intent intent = new Intent(this, statistic.class);
-//        startActivity(intent);
-//        }
+        public void goTostatistic(){
+        Intent intent = new Intent(this, statistic.class);
+        startActivity(intent);
+        }
 
 }
 
