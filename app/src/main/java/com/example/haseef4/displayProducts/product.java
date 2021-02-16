@@ -3,8 +3,12 @@ package com.example.haseef4.displayProducts;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.haseef4.AdminHome;
+import com.example.haseef4.Login;
 import com.example.haseef4.R;
 import com.example.haseef4.StaffHome;
+import com.example.haseef4.displayRestock.restock;
+import com.example.haseef4.statistic;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.viewpager.widget.ViewPager;
@@ -24,6 +28,7 @@ public class product extends AppCompatActivity {
     ViewPager viewPager;
     TabLayout tabLayout;
     ViewPagerAdapter viewPagerAdapter;
+    String Usertype;
 
 
     @Override
@@ -40,12 +45,10 @@ public class product extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         ImageView back_icons = findViewById(R.id.back);
-
-//testsss
         back_icons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(product.this, StaffHome.class));
+                finish();
             }
         });
     }

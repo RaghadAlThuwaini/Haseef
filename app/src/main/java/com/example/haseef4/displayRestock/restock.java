@@ -43,18 +43,16 @@ public class restock extends AppCompatActivity {
         viewPagerAdapter.addFragment(new restockfragment1(), "Dairy products");
         viewPagerAdapter.addFragment(new restockfragment2(), "Juices");
         viewPager.setAdapter(viewPagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);}
+        tabLayout.setupWithViewPager(viewPager);
 
-//        ImageView back_icons = findViewById(R.id.back);
-//
-////testsss
-//        back_icons.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(restock.this, StaffHome.class));
-//            }
-//        });
-//    }
+        ImageView back_icons = findViewById(R.id.back);
+        back_icons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+    }
 
 
 //}
@@ -63,16 +61,6 @@ public class restock extends AppCompatActivity {
 //        viewPager.setAdapter(sectionsPagerAdapter);
 //        TabLayout tabs = findViewById(R.id.tabs);
 //        tabs.setupWithViewPager(viewPager);
-//        ImageView back_icons = findViewById(R.id.back);
-//
-//
-//        back_icons.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(restock.this,StaffHome.class));
-//            }
-//        });
-//    }
 //
 //
 //}

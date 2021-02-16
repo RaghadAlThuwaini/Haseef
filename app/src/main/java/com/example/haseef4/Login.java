@@ -23,8 +23,10 @@ public class Login extends AppCompatActivity {
     EditText txtUser , txtPass;
     Button btnLogin;
     Spinner spinner;
+    public static String cu;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         txtPass= (EditText)findViewById(R.id.txtPass);
@@ -57,6 +59,7 @@ public class Login extends AppCompatActivity {
                             }
                             if(isLogin){
                                 if(type.equals("Admin")){
+                                    cu = "Admin";
                                     goToAdmin();
                                 }
                                 else{
