@@ -11,7 +11,7 @@
         layout="@layout/toolbar" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/staff"
         android:layout_width="298dp"
         android:layout_height="160dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,7 +47,7 @@
         app:srcCompat="@drawable/image2" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/staff_icon"
         android:layout_width="238dp"
         android:layout_height="111dp"
         app:layout_constraintBottom_toBottomOf="parent"

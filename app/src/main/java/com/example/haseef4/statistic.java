@@ -25,7 +25,7 @@ public class statistic extends AppCompatActivity {
                 startActivity(new Intent(statistic.this,popUpWindow.class));
             }
         });
-
+//
 
         back_icons.setOnClickListener(new View.OnClickListener() {
             @Override
