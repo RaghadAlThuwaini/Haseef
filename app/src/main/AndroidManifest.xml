@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Haseef4">
-        <activity android:name=".setting"></activity>
+        <activity android:name=".setting" />
         <!-- <activity -->
         <!-- android:name=".displayRestock.restock" -->
         <!-- /> -->
