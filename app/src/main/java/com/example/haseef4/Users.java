@@ -6,10 +6,27 @@ public class Users {
     private String email;
     private String password;
     private static String type;
-
+    private String line;
+    private String image;
     public Users(){
 
 
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getLine() {
+        return line;
+    }
+
+    public void setLine(String line) {
+        this.line = line;
     }
 
     public String getId() {
@@ -44,10 +61,13 @@ public class Users {
         return email;
     }
 
-    public Users(String id , String email , String password , String type) {
+    public Users(String id , String email , String password , String type,String line,String image) {
         this.id = id;
         this.email=email;
         this.password=password;
         this.type=type;
+        this.line=line;
+        this.image=image;
+
     }
 }

@@ -22,6 +22,8 @@ public class StaffHome extends AppCompatActivity {
         ImageView product_icons = findViewById(R.id.product_icons);
         ImageView restock = findViewById(R.id.restock);
         ImageView restock_icons = findViewById(R.id.restock_icons);
+        ImageView setting = findViewById(R.id.setting);
+
 
         statistic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +38,12 @@ public class StaffHome extends AppCompatActivity {
             }
         });
 
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSetting();
+            }
+        });
 
         product.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +86,14 @@ public class StaffHome extends AppCompatActivity {
         Intent intent = new Intent(this, statistic.class);
         startActivity(intent);
         }
+
+    public void goToSetting(){
+        Intent intent = new Intent(this, setting.class);
+        startActivity(intent);
+
+    }
+
+
 
 }
 

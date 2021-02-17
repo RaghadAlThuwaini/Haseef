@@ -60,9 +60,11 @@ public class Login extends AppCompatActivity {
                             if(isLogin){
                                 if(type.equals("Admin")){
                                     cu = "Admin";
+                                    LogedUser.email=email;
                                     goToAdmin();
                                 }
                                 else{
+                                    LogedUser.email=email;
                                     goToStaff();
                                 }
 
@@ -89,7 +91,9 @@ public class Login extends AppCompatActivity {
 
     private void goToAdmin(){
         Intent intent = new Intent(this, AdminHome.class);
+
         startActivity(intent);
+
     }
     private void goToStaff(){
         Intent intent = new Intent(this, StaffHome.class);
