@@ -42,6 +42,7 @@ public class restock extends AppCompatActivity {
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new restockfragment1(), "Dairy products");
         viewPagerAdapter.addFragment(new restockfragment2(), "Juices");
+        viewPagerAdapter.addFragment(new restockfragment3(), "Chocolate");
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 

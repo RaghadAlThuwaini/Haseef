@@ -11,7 +11,7 @@
     tools:context=".displayProducts.productfragment2">
 
     <ListView
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/juices_view"/>

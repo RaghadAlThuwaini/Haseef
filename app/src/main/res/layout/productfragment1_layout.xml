@@ -11,9 +11,9 @@
     tools:context=".displayProducts.productfragment1">
 
     <ListView
-        android:layout_marginTop="110dp"
+        android:id="@+id/dairy_products_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/dairy_products_view"/>
+        android:layout_marginTop="25dp" />
 
 </FrameLayout>

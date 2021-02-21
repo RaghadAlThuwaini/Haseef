@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class product_adapter extends ArrayAdapter<productModel> {
-    TextView productName, productRestock;
+    TextView productName, productRestock,productCompany, productID;
     ImageView imageView;
     public product_adapter (Context context, ArrayList<productModel> products){
         super(context, 0, products);
@@ -31,10 +31,14 @@ public class product_adapter extends ArrayAdapter<productModel> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_product, parent, false);
         }
         productName = (TextView) convertView.findViewById(R.id.productName);
+        productCompany=(TextView)convertView.findViewById(R.id.productCompany);
+        productID = (TextView) convertView.findViewById(R.id.productID);
         productRestock = (TextView) convertView.findViewById(R.id.productRestock);
         imageView = convertView.findViewById(R.id.productImage);
 
         productName.setText(P.getName());
+        productCompany.setText(P.getCompany());
+        productID.setText(P.getProduct_id());
         productRestock.setText(String.valueOf(P.getRestock()));
         Picasso.get().load(P.getImage()).into(imageView);
 

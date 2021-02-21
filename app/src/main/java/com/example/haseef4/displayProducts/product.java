@@ -41,6 +41,7 @@ public class product extends AppCompatActivity {
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new productfragment1(), "Dairy products");
         viewPagerAdapter.addFragment(new productfragment2(), "Juices");
+        viewPagerAdapter.addFragment(new productfragment3(), "Chocolate");
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
