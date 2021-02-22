@@ -14,7 +14,7 @@ public class editStaff extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//
+////
         //get from previous intent
         setContentView(R.layout.activity_edit_staff);
         name = getIntent().getExtras().getString("name");
