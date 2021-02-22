@@ -47,7 +47,7 @@
         app:srcCompat="@drawable/image2" />
 
     <ImageView
-        android:id="@+id/staff_icons"
+        android:id="@+id/staffIcon"
         android:layout_width="238dp"
         android:layout_height="111dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -8,11 +8,11 @@ public class staffModel {
     private String staffID;
     private String image;
 
-    public staffModel(String Age, String Location, String Name, String Working_since, String staffID, String image){
+    public staffModel(String Age, String image, String location, String staffID, String staffName, String working_since){
         this.age=Age;
-        this.location=Location;
-        this.staffName=Name;
-        this.working_since=Working_since;
+        this.location=location;
+        this.staffName=staffName;
+        this.working_since=working_since;
         this.staffID = staffID;
         this.image = image;
     }

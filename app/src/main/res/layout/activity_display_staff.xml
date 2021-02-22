@@ -6,8 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".displayStaff">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Staff list"
+        android:textSize="24sp" />
 
     <ListView
         android:layout_marginTop="110dp"

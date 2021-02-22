@@ -20,12 +20,13 @@ public class AdminHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_staff);
 
-        ImageView statistic = findViewById(R.id.statisticIconsAdmin);
-        ImageView statistic_icons = findViewById(R.id.statisticAdmin);
+        ImageView statistic=findViewById(R.id.statisticIconsAdmin);
+        ImageView statistic_icons=findViewById(R.id.statisticAdmin);
         ImageView products = findViewById(R.id.productAdmin);
         ImageView product_icons = findViewById(R.id.productIconsAdmin);
-        ImageView staff_icons = findViewById(R.id.staff_icons);
         ImageView staff = findViewById(R.id.staff);
+        ImageView staff_icons = findViewById(R.id.staffIcon);
+
         statistic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +52,12 @@ public class AdminHome extends AppCompatActivity {
                 goToproduct();
             }
         });
+        staff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToStaff();
+            }
+        });
 
         staff_icons.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,26 +65,16 @@ public class AdminHome extends AppCompatActivity {
                 goToStaff();
             }
         });
-        staff.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToStaff();
-            }
-        });
     }
-
-
-    public void goTostatistic() {
+    public void goTostatistic(){
         Intent intent = new Intent(this, statistic.class);
         startActivity(intent);
     }
-
-    public void goToproduct() {
+    public void goToproduct(){
         startActivity(new Intent(this, product.class));
     }
 
-
-    public void goToStaff() {
+    public void goToStaff(){
         startActivity(new Intent(this, displayStaff.class));
     }
-}
+    }

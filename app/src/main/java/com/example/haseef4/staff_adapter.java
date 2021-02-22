@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.haseef4.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -19,8 +23,11 @@ import java.util.ArrayList;
     public class staff_adapter extends ArrayAdapter<staffModel> {
         TextView staffName,staffID,staffAge,staffLocation,staffWorking;
         ImageView imageView;
+        ImageButton delete;
+        DatabaseReference SRef;
         public staff_adapter (Context context, ArrayList<staffModel> staff){
             super(context, 0, staff);
+            SRef = FirebaseDatabase.getInstance().getReference().child("staff");
         }
 
         @NonNull
@@ -36,6 +43,7 @@ import java.util.ArrayList;
             staffLocation = (TextView) convertView.findViewById(R.id.location);
             staffWorking = (TextView) convertView.findViewById(R.id.working);
             imageView = convertView.findViewById(R.id.staffImage);
+            delete = convertView.findViewById(R.id.deleteBtn);
 
             staffName.setText(s.getStaffName());
             staffID.setText(s.getStaffID());
@@ -43,6 +51,14 @@ import java.util.ArrayList;
             staffLocation.setText(s.getLocation());
             staffWorking.setText(s.getWorking_since());
             Picasso.get().load(s.getImage()).into(imageView);
+
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    SRef.child(s.getStaffID()).removeValue();
+                }
+            });
+
 
             return convertView;
 

@@ -9,9 +9,9 @@
 
     <TextView
         android:id="@+id/staffName"
-        android:layout_width="wrap_content"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="260dp"
+        android:layout_marginLeft="240dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:visibility="visible"
@@ -22,7 +22,7 @@
         android:id="@+id/staffName_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:visibility="visible"
@@ -31,9 +31,9 @@
     <TextView
         android:layout_below="@+id/staffName"
         android:id="@+id/staffID"
-        android:layout_width="wrap_content"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="260dp"
+        android:layout_marginLeft="240dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:visibility="visible"
@@ -45,7 +45,7 @@
         android:text="Staff ID:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:visibility="visible"
@@ -54,9 +54,9 @@
     <TextView
         android:id="@+id/staffAge"
         android:layout_below="@+id/staffID"
-        android:layout_width="wrap_content"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="260dp"
+        android:layout_marginLeft="240dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:visibility="visible"
@@ -67,7 +67,7 @@
         android:id="@+id/age_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_below="@+id/StaffID_txt"
@@ -76,9 +76,9 @@
 
     <TextView
         android:id="@+id/location"
-        android:layout_width="wrap_content"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="260dp"
+        android:layout_marginLeft="240dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_below="@+id/staffAge"
@@ -90,7 +90,7 @@
         android:id="@+id/location_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_below="@+id/age_txt"
@@ -99,9 +99,9 @@
 
     <TextView
         android:id="@+id/working"
-        android:layout_width="wrap_content"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="260dp"
+        android:layout_marginLeft="240dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_below="@+id/location"
@@ -113,7 +113,7 @@
         android:id="@+id/working_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_below="@+id/location_txt"
@@ -125,6 +125,7 @@
         android:layout_marginTop="60dp"
         android:layout_height="80dp"
         android:layout_width="130dp"
+        android:layout_marginLeft="-10dp"
         />
 
     <View
@@ -136,5 +137,33 @@
         android:layout_marginBottom="6dp"
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/working"/>
+
+    <ImageButton
+        android:id="@+id/deleteBtn"
+        android:layout_width="14dp"
+        android:layout_height="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="360dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_trash"
+        android:drawableBottom="@drawable/ic_trash"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/editBtn"
+        android:layout_width="14dp"
+        android:layout_height="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/ic_edit"
+        android:drawableBottom="@drawable/ic_trash"
+        tools:ignore="ContentDescription" />
 
 </RelativeLayout>
