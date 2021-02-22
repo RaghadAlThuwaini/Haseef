@@ -17,6 +17,13 @@ public class staffModel {
         this.image = image;
     }
 
+    public staffModel(String staffName , String age, String location, String working_since) {
+        this.age = age;
+        this.location = location;
+        this.staffName = staffName;
+        this.working_since = working_since;
+    }
+
     public staffModel() {
     }
 

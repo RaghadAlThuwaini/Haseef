@@ -3,18 +3,22 @@ package com.example.haseef4;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class editStaff extends AppCompatActivity {
     String name, ID, location, workingSince, age;
     TextInputEditText nameIn, IDIn ,locationIn, workingSinceIn, ageIn;
+    DatabaseReference SRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-////
+        SRef = FirebaseDatabase.getInstance().getReference();
         //get from previous intent
         setContentView(R.layout.activity_edit_staff);
         name = getIntent().getExtras().getString("name");
@@ -35,6 +39,18 @@ public class editStaff extends AppCompatActivity {
         locationIn.setText(location);
         workingSinceIn.setText(workingSince);
         ageIn.setText(age);
+
+    }
+    public void update(View view){
+        String staffName, age, location, working_since;
+        staffName = nameIn.getText().toString();
+//        staffID = IDIn.getText().toString();
+        age = ageIn.getText().toString();
+        location = locationIn.getText().toString();
+        working_since = workingSinceIn.getText().toString();
+        staffModel s = new staffModel(staffName,age,location,working_since);
+        s.setStaffID(ID);
+        SRef.child("staff").child(ID).setValue(s);
 
     }
 }
