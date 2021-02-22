@@ -42,7 +42,7 @@ public class productfragment2 extends Fragment {
                 product_adapter adapter = new product_adapter(getContext(), juicesPlist);
                 productList.setAdapter(adapter);
             }
-
+//
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
