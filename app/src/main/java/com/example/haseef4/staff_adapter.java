@@ -52,7 +52,7 @@ import java.util.ArrayList;
             staffAge.setText(s.getAge());
             staffLocation.setText(s.getLocation());
             staffWorking.setText(s.getWorking_since());
-            Picasso.get().load(s.getImage()).into(imageView);
+           // Picasso.get().load(s.getImage()).into(imageView);
 
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
