@@ -1,6 +1,7 @@
 package com.example.haseef4;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
     public class staff_adapter extends ArrayAdapter<staffModel> {
         TextView staffName,staffID,staffAge,staffLocation,staffWorking;
         ImageView imageView;
-        ImageButton delete;
+        ImageButton delete, edit;
         DatabaseReference SRef;
         public staff_adapter (Context context, ArrayList<staffModel> staff){
             super(context, 0, staff);
@@ -44,6 +45,7 @@ import java.util.ArrayList;
             staffWorking = (TextView) convertView.findViewById(R.id.working);
             imageView = convertView.findViewById(R.id.staffImage);
             delete = convertView.findViewById(R.id.deleteBtn);
+            edit = convertView.findViewById(R.id.editBtn);
 
             staffName.setText(s.getStaffName());
             staffID.setText(s.getStaffID());
@@ -59,7 +61,19 @@ import java.util.ArrayList;
                 }
             });
 
-
+            edit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent editIntent = new Intent(getContext(), editStaff.class);
+                    editIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    editIntent.putExtra("name", s.getStaffName());
+                    editIntent.putExtra("ID", s.getStaffID());
+                    editIntent.putExtra("age", s.getAge());
+                    editIntent.putExtra("location", s.getLocation());
+                    editIntent.putExtra("workingSince", s.getWorking_since());
+                    getContext().startActivity(editIntent);
+                }
+            });
             return convertView;
 
         }
