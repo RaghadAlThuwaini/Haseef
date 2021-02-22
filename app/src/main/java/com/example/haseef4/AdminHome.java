@@ -26,7 +26,7 @@ public class AdminHome extends AppCompatActivity {
         ImageView product_icons = findViewById(R.id.productIconsAdmin);
         ImageView staff = findViewById(R.id.staff);
         ImageView staff_icons = findViewById(R.id.staffIcon);
-
+//
         statistic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
