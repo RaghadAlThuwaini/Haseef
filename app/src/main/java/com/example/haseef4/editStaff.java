@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -40,6 +41,14 @@ public class editStaff extends AppCompatActivity {
         workingSinceIn.setText(workingSince);
         ageIn.setText(age);
 
+        ImageView back_icons = findViewById(R.id.back);
+        back_icons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
     }
     public void update(View view){
         String staffName, age, location, working_since;
@@ -51,6 +60,5 @@ public class editStaff extends AppCompatActivity {
         staffModel s = new staffModel(staffName,age,location,working_since);
         s.setStaffID(ID);
         SRef.child("staff").child(ID).setValue(s);
-
     }
 }

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -32,11 +33,6 @@ public class displayStaff extends AppCompatActivity {
 
         staffList = (ListView) findViewById(R.id.staffList_view);
         List = new ArrayList<>();
-//        List.add(new staffModel(
-//                "20", "\"https://firebasestorage.googleapis.com/v0/b/haseef-34e27.appspot.com/o/receptionist.png?alt=media&token=7ca39d28-06b0-4c2a-b432-0e96a6c4fa5a\""
-//                , "choco line","000", "saud", "2019"));
-//        staff_adapter adapter = new staff_adapter(getBaseContext(), List);
-//        staffList.setAdapter(adapter);
 
         SPref = FirebaseDatabase.getInstance().getReference().child("staff");
         SPref.addValueEventListener(new ValueEventListener() {
@@ -66,5 +62,13 @@ public class displayStaff extends AppCompatActivity {
 //                return false;
 //            }
 //        });
+
+        ImageView back_icons = findViewById(R.id.back);
+        back_icons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }
