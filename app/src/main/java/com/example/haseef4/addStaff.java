@@ -19,7 +19,7 @@ public class addStaff extends AppCompatActivity {
     EditText workingsince;
     EditText Sage;
     EditText slocation;
-    Button insertstaff;
+    Button insertstaff, addStaff;
     ImageView image;
     DatabaseReference staffDB;
 
@@ -33,11 +33,17 @@ public class addStaff extends AppCompatActivity {
         workingsince = findViewById(R.id.workingsincetext);
         Sage = findViewById(R.id.agetext);
         slocation = findViewById(R.id.locationtext);
-        insertstaff=findViewById(R.id.insertstaff);
-        image=findViewById(R.id.imageView2);
-
-        staffDB= FirebaseDatabase.getInstance().getReference().child("staff");
-
+        insertstaff = findViewById(R.id.insertstaff);
+        image = findViewById(R.id.imageView2);
+        addStaff = findViewById(R.id.addStaff);
+        staffDB = FirebaseDatabase.getInstance().getReference().child("staff");
+        ImageView back_icons = findViewById(R.id.back);
+        back_icons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         insertstaff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +52,9 @@ public class addStaff extends AppCompatActivity {
         });
 
     }
+
+
+
     public void insertStaffData(){
         String age=staffname.getText().toString();
         String location=slocation.getText().toString();

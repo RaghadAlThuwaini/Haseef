@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".addStaff">
 
+    <include
+        android:id="@+id/include3"
+        layout="@layout/toolbar" />
     <ImageView
         android:id="@+id/staffImage2"
         android:layout_width="130dp"

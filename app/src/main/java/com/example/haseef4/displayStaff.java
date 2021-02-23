@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -35,6 +37,8 @@ public class displayStaff extends AppCompatActivity {
         List = new ArrayList<>();
 
         SPref = FirebaseDatabase.getInstance().getReference().child("staff");
+
+
         SPref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -52,6 +56,7 @@ public class displayStaff extends AppCompatActivity {
             }
 
         });
+
 //        staffList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 //            @Override
 //            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -64,11 +69,24 @@ public class displayStaff extends AppCompatActivity {
 //        });
 
         ImageView back_icons = findViewById(R.id.back);
+        Button addstaff=findViewById(R.id.addStaff);
+        addstaff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              goToAddStaff();
+            }
+        });
         back_icons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
+
     }
+    public void goToAddStaff(){
+        Intent intent = new Intent(this, addStaff.class);
+        startActivity(intent);
+    }
+
 }
