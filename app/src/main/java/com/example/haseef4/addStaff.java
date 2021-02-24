@@ -37,6 +37,8 @@ public class addStaff extends AppCompatActivity {
         image = findViewById(R.id.imageView2);
         addStaff = findViewById(R.id.addStaff);
         staffDB = FirebaseDatabase.getInstance().getReference().child("staff");
+
+
         ImageView back_icons = findViewById(R.id.back);
         back_icons.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +46,7 @@ public class addStaff extends AppCompatActivity {
                 finish();
             }
         });
+
         insertstaff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,8 +55,6 @@ public class addStaff extends AppCompatActivity {
         });
 
     }
-
-
 
     public void insertStaffData(){
         String age=staffname.getText().toString();

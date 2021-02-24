@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 public class setting extends AppCompatActivity {
-   private TextView email1,id1,line1;
+   private TextView email1,id1,line1,signOut;
    private ImageView image1;
    private String email,password;
    //private static  final  String USER="users";
@@ -37,7 +38,7 @@ public class setting extends AppCompatActivity {
 
         database=FirebaseDatabase.getInstance();
         mDatabase=database.getReference("users");
-
+        signOut=findViewById(R.id.sign_out);
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -61,4 +62,12 @@ public class setting extends AppCompatActivity {
         });
 
     }
+
+    public void signout(View v){
+       Intent intent=new Intent(this,Login.class);
+       startActivity(intent);
+       finish();
+    }
+
+
 }
