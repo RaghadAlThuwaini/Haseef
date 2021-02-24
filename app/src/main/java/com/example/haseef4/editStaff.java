@@ -1,12 +1,16 @@
 package com.example.haseef4;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -59,6 +63,16 @@ public class editStaff extends AppCompatActivity {
         working_since = workingSinceIn.getText().toString();
         staffModel s = new staffModel(staffName,age,location,working_since);
         s.setStaffID(ID);
-        SRef.child("staff").child(ID).setValue(s);
-    }
-}
+        SRef.child("staff").child(ID).setValue(s).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(editStaff.this, "Staff updated", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(editStaff.this, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+}}
