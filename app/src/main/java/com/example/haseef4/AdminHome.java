@@ -26,7 +26,7 @@ public class AdminHome extends AppCompatActivity {
         ImageView product_icons = findViewById(R.id.productIconsAdmin);
         ImageView staff = findViewById(R.id.staff);
         ImageView staff_icons = findViewById(R.id.staffIcon);
-//
+        ImageView setting = findViewById(R.id.setting);
         statistic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +65,14 @@ public class AdminHome extends AppCompatActivity {
                 goToStaff();
             }
         });
+
+
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSetting();
+            }
+        });
     }
     public void goTostatistic(){
         Intent intent = new Intent(this, statistic.class);
@@ -77,4 +85,12 @@ public class AdminHome extends AppCompatActivity {
     public void goToStaff(){
         startActivity(new Intent(this, displayStaff.class));
     }
+
+    public void goToSetting(){
+        Intent intent = new Intent(this, setting.class);
+        startActivity(intent);
+
     }
+
+    }//end class
+

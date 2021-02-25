@@ -5,7 +5,7 @@ public class Users {
     private String id;
     private String email;
     private String password;
-    private static String type;
+    private  String type;
     private String line;
     private String image;
     public Users(){
@@ -49,7 +49,7 @@ public class Users {
         this.id = id;
     }
 
-    public static String getType() {
+    public  String getType() {
         return type;
     }
 
