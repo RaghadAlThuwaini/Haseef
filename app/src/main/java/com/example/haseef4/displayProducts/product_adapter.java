@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.haseef4.R;
+import com.example.haseef4.staffModel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -19,8 +22,10 @@ import java.util.ArrayList;
 public class product_adapter extends ArrayAdapter<productModel> {
     TextView productName, productRestock,productCompany, productID,product_number;
     ImageView imageView;
+    DatabaseReference PRef;
     public product_adapter (Context context, ArrayList<productModel> products){
         super(context, 0, products);
+        PRef = FirebaseDatabase.getInstance().getReference().child("products");
     }
 
     @NonNull
