@@ -25,7 +25,6 @@ public class product_adapter extends ArrayAdapter<productModel> {
     DatabaseReference PRef;
     public product_adapter (Context context, ArrayList<productModel> products){
         super(context, 0, products);
-        PRef = FirebaseDatabase.getInstance().getReference().child("products");
     }
 
     @NonNull
