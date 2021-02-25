@@ -99,6 +99,31 @@
         tools:visibility="visible"
         android:layout_marginStart="150dp" />
 
+
+    <TextView
+        android:layout_below="@+id/productID"
+        android:id="@+id/productNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:layout_marginStart="260dp" />
+    <TextView
+        android:layout_below="@+id/productID_txt"
+        android:id="@+id/productNumber_txt"
+        android:text="Product Number:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:layout_marginStart="150dp" />
+
     <ImageView
         android:id="@+id/productImage"
         android:layout_height="70dp"
@@ -114,6 +139,6 @@
         android:layout_marginRight="6dp"
         android:layout_marginBottom="6dp"
         android:layout_marginLeft="20dp"
-        android:layout_below="@+id/productID"/>
+        android:layout_below="@+id/productNumber"/>
 
 </RelativeLayout>

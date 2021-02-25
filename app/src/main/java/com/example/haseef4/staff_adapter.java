@@ -58,6 +58,7 @@ import java.util.ArrayList;
                 @Override
                 public void onClick(View v) {
                     SRef.child(s.getStaffID()).removeValue();
+
                 }
             });
 

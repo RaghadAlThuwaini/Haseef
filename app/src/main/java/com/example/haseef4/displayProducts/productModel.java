@@ -1,15 +1,16 @@
 package com.example.haseef4.displayProducts;
 
 public class productModel {
-    String name, image,company,product_id;
+    String name, image,company,product_id,product_number;
     Long restock;
 
-    public productModel(String name, Long restock, String image,String company,String product_id) {
+    public productModel(String name, Long restock, String image,String company,String product_id,String product_number) {
         this.name = name;
         this.restock = restock;
         this.image = image;
         this.company=company;
         this.product_id=product_id;
+        this.product_number=product_number;
     }
 
     public productModel() {
@@ -44,6 +45,14 @@ public class productModel {
     }
     public String getCompany() {
         return company;
+    }
+
+    public String getProduct_number() {
+        return product_number;
+    }
+
+    public void setProduct_number(String product_number) {
+        this.product_number = product_number;
     }
 
     public String getProduct_id() {
