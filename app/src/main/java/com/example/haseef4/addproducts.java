@@ -34,6 +34,8 @@ public class addproducts extends AppCompatActivity {
     EditText addlocation;
     EditText addid;
     Button btnInsertData;
+    Button adchocolate;
+    Button btInsertDataJuices;
 
 
     public Uri imageUri;
@@ -55,7 +57,8 @@ public class addproducts extends AppCompatActivity {
         addlocation= findViewById(R.id.addlocation);
         addid=findViewById(R.id.addid);
 
-
+        adchocolate = findViewById(R.id.adchocolate);
+        btInsertDataJuices=findViewById(R.id.btInsertDataJuices);
         btnInsertData = findViewById(R.id.btInsertData);
         storage = FirebaseStorage.getInstance();
         imageview= findViewById(R.id.imageview);
@@ -69,16 +72,51 @@ public class addproducts extends AppCompatActivity {
 
             }
         });
-        // method to insaert pic
+        // method to insaert milk
         btnInsertData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertProducttData();
+                String mproduct = adproduct.getText().toString();
+                String  mcompany= addcompany.getText().toString();
+                String mlocation = addlocation.getText().toString();
+                String mid= addid.getText().toString();
+                productadd addp= new productadd(mproduct,mcompany,mlocation,mid);
+                productDbRef.child("dairyProducts").child(mproduct).setValue(addp);
+                Toast.makeText(addproducts.this,"insert at dairyProducts ",Toast.LENGTH_LONG).show();
+               // insertProducttData();
 
 
 
             }
         });
+        adchocolate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String chproduct = adproduct.getText().toString();
+                String  chcompany= addcompany.getText().toString();
+                String chlocation = addlocation.getText().toString();
+                String chid= addid.getText().toString();
+                productadd addp= new productadd(chproduct,chcompany,chlocation,chid);
+                productDbRef.child("Chocolate").child(chproduct).setValue(addp);
+                Toast.makeText(addproducts.this,"insert at chocolate ",Toast.LENGTH_LONG).show();
+
+            }
+        });
+        btInsertDataJuices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String juproduct = adproduct.getText().toString();
+                String  jucompany= addcompany.getText().toString();
+                String julocation = addlocation.getText().toString();
+                String juid= addid.getText().toString();
+                productadd addp= new productadd(juproduct,jucompany,julocation,juid);
+                productDbRef.child("Juices").child(juproduct).setValue(addp);
+                Toast.makeText(addproducts.this,"insert at juices ",Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+
     }
     // method implemted for upload file**
         @Override

@@ -36,15 +36,27 @@
 
     <Button
         android:id="@+id/btInsertData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="insert data"
+        android:layout_width="123dp"
+        android:layout_height="53dp"
+        android:text="dairy PRODUCTs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.017"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878" />
+        app:layout_constraintVertical_bias="0.82" />
+
+    <Button
+        android:id="@+id/btInsertDataJuices"
+        android:layout_width="134dp"
+        android:layout_height="54dp"
+        android:text="Juices"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.821" />
 
     <EditText
         android:id="@+id/addid"
@@ -149,5 +161,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.601" />
+
+    <Button
+        android:id="@+id/adchocolate"
+        android:layout_width="125dp"
+        android:layout_height="52dp"
+        android:text="Chocolate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.82" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="125dp"
+        android:layout_height="24dp"
+        android:text="Insert data at:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.741" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
