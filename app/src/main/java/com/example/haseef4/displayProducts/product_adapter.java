@@ -12,13 +12,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.haseef4.R;
+import com.example.haseef4.staffModel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class product_adapter extends ArrayAdapter<productModel> {
-    TextView productName, productRestock,productCompany, productID;
+    TextView productName, productRestock,productCompany, productID,product_number;
     ImageView imageView;
+    DatabaseReference PRef;
     public product_adapter (Context context, ArrayList<productModel> products){
         super(context, 0, products);
     }
@@ -34,12 +38,15 @@ public class product_adapter extends ArrayAdapter<productModel> {
         productCompany=(TextView)convertView.findViewById(R.id.productCompany);
         productID = (TextView) convertView.findViewById(R.id.productID);
         productRestock = (TextView) convertView.findViewById(R.id.productRestock);
+        product_number = (TextView) convertView.findViewById(R.id.productNumber);
         imageView = convertView.findViewById(R.id.productImage);
+
 
         productName.setText(P.getName());
         productCompany.setText(P.getCompany());
         productID.setText(P.getProduct_id());
         productRestock.setText(String.valueOf(P.getRestock()));
+        product_number.setText(P.getProduct_number());
         Picasso.get().load(P.getImage()).into(imageView);
 
         return convertView;
