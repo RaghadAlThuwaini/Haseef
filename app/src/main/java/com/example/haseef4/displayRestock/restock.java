@@ -25,6 +25,7 @@ import com.example.haseef4.displayProducts.ViewPagerAdapter;
 import com.example.haseef4.displayProducts.product;
 import com.example.haseef4.displayProducts.productModel;
 import com.example.haseef4.displayProducts.product_adapter;
+import com.example.haseef4.notification;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -51,14 +52,12 @@ public class restock extends AppCompatActivity {
     String sensor;
     float weighted, itemWeight;
     String itemsLeft;
-    static ArrayList<productModel> toNotifyProducts;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restock);
-
 //        Sref = FirebaseDatabase.getInstance().getReference("Sensors");
 //        Pref = FirebaseDatabase.getInstance().getReference("products");
 //
@@ -106,6 +105,14 @@ public class restock extends AppCompatActivity {
         viewPagerAdapter.addFragment(new restockfragment3(), "Chocolate");
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
+        ImageView notifications = findViewById(R.id.notifications);
+
+        notifications.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToNotification();
+            }
+        });
 
         ImageView back_icons = findViewById(R.id.back);
         back_icons.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +121,9 @@ public class restock extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    public void goToNotification(){
+        startActivity(new Intent(this, notification.class));
     }
 
 

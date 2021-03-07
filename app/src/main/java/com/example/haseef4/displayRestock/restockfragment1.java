@@ -1,6 +1,8 @@
 package com.example.haseef4.displayRestock;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -20,9 +22,11 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.haseef4.MainActivity;
 import com.example.haseef4.R;
 import com.example.haseef4.displayProducts.productModel;
 import com.example.haseef4.displayProducts.product_adapter;
+import com.example.haseef4.notification;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,7 +36,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import static com.example.haseef4.displayRestock.restock.toNotifyProducts;
+import static com.example.haseef4.notification.toNotifyProducts;
 
 public class restockfragment1 extends Fragment {
 
@@ -60,7 +64,7 @@ public class restockfragment1 extends Fragment {
                 for(DataSnapshot productSnapshot: snapshot.getChildren()){
                     productModel P = productSnapshot.getValue(productModel.class);
                     dairyPlist.add(P);
-//                    toNotifyProducts.add(P);
+                    toNotifyProducts.add(P);
                     Triggernotification(P.getName());
                 }
                 product_adapter adapter = new product_adapter(getContext(), dairyPlist);
@@ -78,13 +82,17 @@ public class restockfragment1 extends Fragment {
         NotificationManager manager = ContextCompat.getSystemService(getContext(), NotificationManager.class);
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
             NotificationChannel channel = new NotificationChannel("d", "dairyP", NotificationManager.IMPORTANCE_HIGH);
+            channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+//            channel.setShowBadge(true);
+//            channel.setBypassDnd(true);
             manager.createNotificationChannel(channel);
         }
-        Intent intent = new Intent(getContext(), restock.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        Intent intent = new Intent(getContext(), notification.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP |Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        //
         PendingIntent pendingIntent = PendingIntent.getActivity(getContext(), 0, intent, 0);
 
-        Intent fullScreenIntent = new Intent(getContext(), restock.class);
+        Intent fullScreenIntent = new Intent(getContext(), notification.class);
         PendingIntent fullScreenPendingIntent = PendingIntent.getActivity(getContext(), 0,
                 fullScreenIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
@@ -97,6 +105,8 @@ public class restockfragment1 extends Fragment {
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setWhen(System.currentTimeMillis())
+                .setOnlyAlertOnce(true)
+                .setChannelId("d")
                 .setFullScreenIntent(fullScreenPendingIntent, true);
 
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(getContext());

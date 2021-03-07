@@ -23,6 +23,7 @@ import androidx.fragment.app.Fragment;
 import com.example.haseef4.R;
 import com.example.haseef4.displayProducts.productModel;
 import com.example.haseef4.displayProducts.product_adapter;
+import com.example.haseef4.notification;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,7 +33,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import static com.example.haseef4.displayRestock.restock.toNotifyProducts;
+import static com.example.haseef4.notification.toNotifyProducts;
 
 public class restockfragment3 extends Fragment {
     ListView productList;
@@ -54,7 +55,7 @@ public class restockfragment3 extends Fragment {
                 for (DataSnapshot productSnapshot : snapshot.getChildren()) {
                     productModel P = productSnapshot.getValue(productModel.class);
                     chocolatePlist.add(P);
-//                    toNotifyProducts.add(P);
+                    toNotifyProducts.add(P);
                     Triggernotification(P.getName());
                 }
                 product_adapter adapter = new product_adapter(getContext(), chocolatePlist);
@@ -74,11 +75,11 @@ public class restockfragment3 extends Fragment {
             NotificationChannel channel = new NotificationChannel("c", "Choco", NotificationManager.IMPORTANCE_HIGH);
             manager.createNotificationChannel(channel);
         }
-        Intent intent = new Intent(getContext(), restock.class);
+        Intent intent = new Intent(getContext(), notification.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(getContext(), 0, intent, 0);
 
-        Intent fullScreenIntent = new Intent(getContext(), restock.class);
+        Intent fullScreenIntent = new Intent(getContext(), notification.class);
         PendingIntent fullScreenPendingIntent = PendingIntent.getActivity(getContext(), 0,
                 fullScreenIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
