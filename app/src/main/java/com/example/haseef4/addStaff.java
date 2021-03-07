@@ -42,7 +42,7 @@ public class addStaff extends AppCompatActivity {
     private FirebaseStorage storage;
     private StorageReference storageReference;
 
-    DatabaseReference staffDbRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -139,7 +139,7 @@ public class addStaff extends AppCompatActivity {
 
 
     public void insertStaffData(){
-        String age=staffname.getText().toString();
+        String age=Sage.getText().toString();
         String location=slocation.getText().toString();
         String staffName=staffname.getText().toString();
         String working_since=workingsince.getText().toString();

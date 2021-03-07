@@ -6,7 +6,7 @@ public class staffModel {
     private String staffName;
     private String working_since;
     private String staffID;
-   // private String image;
+    private String image;
 
     public staffModel(String Age, String location, String staffID, String staffName, String working_since){
         this.age=Age;
@@ -14,7 +14,7 @@ public class staffModel {
         this.staffName=staffName;
         this.working_since=working_since;
         this.staffID = staffID;
-        //this.image = image;
+        this.image = image;
     }
 
     public staffModel(String staffName , String age, String location, String working_since) {
@@ -67,11 +67,11 @@ public class staffModel {
         this.staffID = staffID;
     }
 
-    //public String getImage() {
-    //    return image;
-   // }
+    public String getImage() {
+       return image;
+    }
 
-   // public void setImage(String image) {
-    //    this.image = image;
-   // }
+    public void setImage(String image) {
+       this.image = image;
+    }
 }
