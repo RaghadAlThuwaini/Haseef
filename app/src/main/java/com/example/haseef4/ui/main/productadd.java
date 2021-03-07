@@ -6,6 +6,8 @@ public class productadd {
     String product_location;
     String product_id;
 
+    public productadd() {
+    }
 
     public productadd(String product_name , String product_type, String product_location, String product_id) {
         this.product_name = product_name;
@@ -13,6 +15,7 @@ public class productadd {
         this.product_id=product_id;
         this.product_location= product_location;
     }
+
 
     public String getProduct_name() {
         return product_name;

@@ -36,6 +36,8 @@
         <activity android:name=".AdminHome" />
         <activity android:name=".Login" />
         <activity android:name=".displayStaff" />
+        <activity android:name=".addproducts" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.haseef4.ui.main.productadd;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.snackbar.Snackbar;
+//import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -39,14 +39,15 @@ public class addproducts extends AppCompatActivity {
 
 
     public Uri imageUri;
-    private ImageView imageview;
+    private ImageView imgview;
     private FirebaseStorage storage;
     private StorageReference storageReference;
 
     DatabaseReference productDbRef;
+    FirebaseStorage mStorageRef;
 
 
-   // @SuppressLint("WrongViewCast")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,16 +57,16 @@ public class addproducts extends AppCompatActivity {
         addcompany = findViewById(R.id.addcompany);
         addlocation= findViewById(R.id.addlocation);
         addid=findViewById(R.id.addid);
-
+//        mStorageRef = FirebaseStorage.getInstance("image");
         adchocolate = findViewById(R.id.adchocolate);
         btInsertDataJuices=findViewById(R.id.btInsertDataJuices);
         btnInsertData = findViewById(R.id.btInsertData);
         storage = FirebaseStorage.getInstance();
-        imageview= findViewById(R.id.imageview);
+        imgview= findViewById(R.id.imgview);
         storageReference  =storage.getReference();
         productDbRef= FirebaseDatabase.getInstance().getReference().child("products");
         // method for chooseing pic
-        imageview.setOnClickListener(new View.OnClickListener() {
+        imgview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 choosePicture();
@@ -124,7 +125,7 @@ public class addproducts extends AppCompatActivity {
             super.onActivityResult(requestCode, resultCode, data);
             if(requestCode==1 && resultCode==RESULT_OK&& data!=null && data.getData()!=null){
                 imageUri = data.getData();
-                imageview.setImageURI(imageUri);
+                imgview.setImageURI(imageUri);
                 uploadPicture();
             }
 
@@ -132,7 +133,7 @@ public class addproducts extends AppCompatActivity {
         }
 
         // عرف اللمتعيرات عشان اقدر اعكتب عليها + الصوره
-    private void insertProducttData() {
+   /* private void insertProducttData() {
        String product_name=adproduct.getText().toString();
        String product_type = addcompany.getText().toString();
        String product_location= addlocation.getText().toString();
@@ -140,18 +141,10 @@ public class addproducts extends AppCompatActivity {
        productadd addp= new productadd(product_name,product_type , product_location , producrt_id);
        productDbRef.push().setValue(addp);
        Toast.makeText(addproducts.this,"Data insert",Toast.LENGTH_SHORT).show();
-    }
+    }*/
 
 
 
-    // for choosinh insaide
-    private void choosePicture(){
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent,1);
-
-    }
 
 
 
@@ -171,7 +164,7 @@ public class addproducts extends AppCompatActivity {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         pd.dismiss();
-                        Snackbar.make(findViewById(android.R.id.content),"image upload",Snackbar.LENGTH_LONG).show();
+                     //   Snackbar.make(findViewById(android.R.id.content),"image upload",Snackbar.LENGTH_LONG).show();
 
                     }
                 })
@@ -191,5 +184,14 @@ public class addproducts extends AppCompatActivity {
                 });
 
     }
+    // for choosinh insaide
+    private void choosePicture(){
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent,1);
+
+    }
+
 
 }
