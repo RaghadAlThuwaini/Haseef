@@ -1,5 +1,12 @@
 package com.example.haseef4.displayRestock;
 
+import android.app.Application;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +15,9 @@ import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.haseef4.R;
@@ -21,6 +31,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+
+import static com.example.haseef4.displayRestock.restock.toNotifyProducts;
 
 public class restockfragment2 extends Fragment {
     ListView productList;
@@ -41,6 +53,8 @@ public class restockfragment2 extends Fragment {
                 for(DataSnapshot productSnapshot: snapshot.getChildren()){
                     productModel P = productSnapshot.getValue(productModel.class);
                     juicesPlist.add(P);
+//                    toNotifyProducts.add(P);
+                    Triggernotification(P.getName());
                 }
                 product_adapter adapter = new product_adapter(getContext(), juicesPlist);
                 productList.setAdapter(adapter);
@@ -52,5 +66,34 @@ public class restockfragment2 extends Fragment {
             }
         });
         return view;
+    }
+
+    private void Triggernotification(String productName){
+        NotificationManager manager = ContextCompat.getSystemService(getContext(), NotificationManager.class);
+        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("J", "juices", NotificationManager.IMPORTANCE_HIGH);
+            manager.createNotificationChannel(channel);
+        }
+        Intent intent = new Intent(getContext(), restock.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getContext(), 0, intent, 0);
+
+        Intent fullScreenIntent = new Intent(getContext(), restock.class);
+        PendingIntent fullScreenPendingIntent = PendingIntent.getActivity(getContext(), 0,
+                fullScreenIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getContext(), "J")
+                .setContentText("Haseef").setSmallIcon(R.drawable.ic_baseline_notifications_24)
+                .setAutoCancel(true)
+                .setContentText(productName+ " product needs to be refilled")
+                .setContentIntent(pendingIntent)
+                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setWhen(System.currentTimeMillis())
+                .setFullScreenIntent(fullScreenPendingIntent, true);
+
+        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(getContext());
+        managerCompat.notify(2, builder.build());
     }
 }
