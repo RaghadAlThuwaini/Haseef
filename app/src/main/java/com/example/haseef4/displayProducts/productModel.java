@@ -1,15 +1,28 @@
 package com.example.haseef4.displayProducts;
 
-public class productModel {
-    String name, image,company,product_id,product_number;
-    Long restock;
+import androidx.annotation.NonNull;
 
-    public productModel(String name, Long restock, String image,String company,String product_id,String product_number) {
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+public class productModel {
+
+    String name, image,company,product_id, sensor,product_number;
+    Long restock, weight;
+//    private DatabaseReference Rref;
+//    private DatabaseReference Sref;
+
+    public productModel(String name, Long restock, String image,String company,String product_id, Long weight,String sensor,String product_number) {
         this.name = name;
         this.restock = restock;
         this.image = image;
         this.company=company;
         this.product_id=product_id;
+        this.weight = weight;
+        this.sensor = sensor;
         this.product_number=product_number;
     }
 
@@ -37,6 +50,9 @@ public class productModel {
     }
 
     public void setRestock(Long restock) {
+//        Sref = FirebaseDatabase.getInstance().getReference().child("Sensors");
+//        String getReadaleWeight = Sref.child(getSensor()).child("Weight").get().toString();
+//        this.restock = Long.valueOf(getReadaleWeight);
         this.restock = restock;
     }
 
@@ -60,5 +76,21 @@ public class productModel {
     }
     public void setProduct_id(String product_id) {
         this.product_id = product_id;
+    }
+
+    public Long getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Long weight) {
+        this.weight = weight;
+    }
+
+    public String getSensor() {
+        return sensor;
+    }
+
+    public void setSensor(String sensor) {
+        this.sensor = sensor;
     }
 }
