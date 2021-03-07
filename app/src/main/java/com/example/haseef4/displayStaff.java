@@ -68,7 +68,6 @@ public class displayStaff extends AppCompatActivity {
 //            }
 //        });
 
-        ImageView back_icons = findViewById(R.id.back);
         Button addstaff=findViewById(R.id.addStaff);
         addstaff.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,10 +75,18 @@ public class displayStaff extends AppCompatActivity {
               goToAddStaff();
             }
         });
+        ImageView back_icons = findViewById(R.id.back);
         back_icons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+        ImageView notifications = findViewById(R.id.notifications);
+        notifications.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToNotification();
             }
         });
 
@@ -87,6 +94,9 @@ public class displayStaff extends AppCompatActivity {
     public void goToAddStaff(){
         Intent intent = new Intent(this, addStaff.class);
         startActivity(intent);
+    }
+    public void goToNotification(){
+        startActivity(new Intent(this, notification.class));
     }
 
 }

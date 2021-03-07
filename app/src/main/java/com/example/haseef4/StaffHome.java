@@ -23,7 +23,14 @@ public class StaffHome extends AppCompatActivity {
         ImageView restock = findViewById(R.id.restock);
         ImageView restock_icons = findViewById(R.id.restock_icons);
         ImageView setting = findViewById(R.id.setting);
+        ImageView notifications = findViewById(R.id.notifications);
 
+        notifications.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToNotification();
+            }
+        });
 
         statistic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,17 +90,16 @@ public class StaffHome extends AppCompatActivity {
         }
 
         public void goTostatistic(){
-        Intent intent = new Intent(this, statistic.class);
-        startActivity(intent);
-        }
-
-    public void goToSetting(){
-        Intent intent = new Intent(this, setting.class);
-        startActivity(intent);
-
+        startActivity(new Intent(this, statistic.class));
     }
 
+        public void goToSetting(){
+        startActivity(new Intent(this, setting.class));
+    }
 
+        public void goToNotification(){
+        startActivity(new Intent(this, notification.class));
+    }
 
 }
 

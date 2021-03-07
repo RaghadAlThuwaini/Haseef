@@ -8,6 +8,7 @@ import com.example.haseef4.Login;
 import com.example.haseef4.R;
 import com.example.haseef4.StaffHome;
 import com.example.haseef4.displayRestock.restock;
+import com.example.haseef4.notification;
 import com.example.haseef4.statistic;
 import com.google.android.material.tabs.TabLayout;
 
@@ -45,6 +46,14 @@ public class product extends AppCompatActivity {
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
+        ImageView notifications = findViewById(R.id.notifications);
+        notifications.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToNotification();
+            }
+        });
+
         ImageView back_icons = findViewById(R.id.back);
         back_icons.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +61,9 @@ public class product extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    public void goToNotification(){
+        startActivity(new Intent(this, notification.class));
     }
 }
 
