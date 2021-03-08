@@ -56,7 +56,7 @@ public class product extends AppCompatActivity {
         });
 
         ImageView add_icons = findViewById(R.id.add_icons);
-        notifications.setOnClickListener(new View.OnClickListener() {
+        add_icons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 goToAddProduct();
