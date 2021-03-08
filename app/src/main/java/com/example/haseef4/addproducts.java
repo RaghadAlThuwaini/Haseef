@@ -72,6 +72,28 @@ public class addproducts extends AppCompatActivity {
                 choosePicture();
 
             }
+            private void choosePicture(){
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(intent,1);
+
+            }
+
+        });
+        ImageView back_icons = findViewById(R.id.back);
+        back_icons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        ImageView notifications = findViewById(R.id.notifications);
+        notifications.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToNotification();
+            }
         });
         // method to insaert milk
         btnInsertData.setOnClickListener(new View.OnClickListener() {
@@ -185,13 +207,17 @@ public class addproducts extends AppCompatActivity {
 
     }
     // for choosinh insaide
-    private void choosePicture(){
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent,1);
 
+
+
+    public void goToAddStaff(){
+        Intent intent = new Intent(this, addStaff.class);
+        startActivity(intent);
+    }
+    public void goToNotification(){
+        startActivity(new Intent(this, notification.class));
     }
 
-
 }
+
+
