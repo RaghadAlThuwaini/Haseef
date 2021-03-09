@@ -24,7 +24,7 @@ public class staffModel {
         this.working_since = working_since;
     }
 
-    public staffModel() {
+    public staffModel(String age, String location, String staffID, String staffName, String working_since, String s) {
     }
 
     public String getAge() {

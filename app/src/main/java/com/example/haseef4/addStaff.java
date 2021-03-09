@@ -5,10 +5,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -37,10 +39,14 @@ public class addStaff extends AppCompatActivity {
     ImageView image;
     DatabaseReference staffDB;
 
-    private ImageView profilePic;
+    private ImageView imageView;
+
     public Uri imageUri;
-    private FirebaseStorage storage;
-    private StorageReference storageReference;
+    //  private FirebaseStorage storage;
+    // private StorageReference storageReference;
+
+    private  DatabaseReference root=FirebaseDatabase.getInstance().getReference().child("staff");
+    private  StorageReference reference=FirebaseStorage.getInstance().getReference();
 
 
     @Override
@@ -55,12 +61,11 @@ public class addStaff extends AppCompatActivity {
         insertstaff = findViewById(R.id.insertstaff);
         image = findViewById(R.id.imageView2);
         addStaff = findViewById(R.id.addStaff);
-        profilePic=findViewById(R.id.staffimage);
+        imageView=findViewById(R.id.staffimage);
         staffDB = FirebaseDatabase.getInstance().getReference().child("staff");
         ImageView back_icons = findViewById(R.id.back);
-
-        storage=FirebaseStorage.getInstance();
-        storageReference=storage.getReference();
+        // storage=FirebaseStorage.getInstance();
+        //  storageReference=storage.getReference();
 
         back_icons.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,34 +74,36 @@ public class addStaff extends AppCompatActivity {
             }
         });
         insertstaff.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                insertStaffData();
+                if(imageUri!=null){}
+                else{
+                    Toast.makeText(addStaff.this,"please select an image",Toast.LENGTH_SHORT).show();
+                }
+
+                uploadToFirebase(imageUri);
             }
         });
 
-        profilePic.setOnClickListener(new View.OnClickListener() {
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                choosePicture();
+                Intent gallaryIntent=new Intent();
+                gallaryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                gallaryIntent.setType("image/*");
+                startActivityForResult(gallaryIntent,2);
             }
         });
-    }
-
-    private void choosePicture() {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent,1);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.getData() != null) {
+        if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
             imageUri = data.getData();
-            profilePic.setImageURI(imageUri);
-            uploadPicture();
+            imageView.setImageURI(imageUri);
+
         }
     }
 
@@ -106,8 +113,7 @@ public class addStaff extends AppCompatActivity {
         pd.show();
 
         final String randomKey = UUID.randomUUID().toString();
-        //  Uri file =Uri.fromFile(new File("path/to/image/rivers.jpg"));
-        StorageReference riverRef= storageReference.child("imageg"+ randomKey);
+        StorageReference riverRef= reference.child("image"+ randomKey);
 
         riverRef.putFile(imageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -131,22 +137,50 @@ public class addStaff extends AppCompatActivity {
                         double progressPercent = (100.00* taskSnapshot.getBytesTransferred()/ taskSnapshot.getTotalByteCount());
                         pd.setMessage("percent "+(int) progressPercent+"9");
                     }
+                });}
+
+
+
+
+    private void uploadToFirebase(Uri uri){
+        StorageReference fileRef=reference.child(System.currentTimeMillis()+ "." + getFileExtension(uri));
+        fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        String age=Sage.getText().toString();
+                        String location=slocation.getText().toString();
+                        String staffName=staffname.getText().toString();
+                        String working_since=workingsince.getText().toString();
+                        String staffID=staffid.getText().toString();
+                        staffModel s=new staffModel(age,location,staffID,staffName,working_since,uri.toString());
+                        staffDB.push().setValue(s);
+                        staffModel model=new staffModel(location,staffID,staffName,working_since,uri.toString(), age);
+                        String modelId=root.push().getKey();
+                        root.child(modelId).setValue(model);
+                        Toast.makeText(addStaff.this , " uploaded successfully",Toast.LENGTH_LONG).show();
+
+                    }
                 });
+            }
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
 
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(addStaff.this , " uploading fail",Toast.LENGTH_LONG).show();
+            }
+        });
     }
-
-
-
-
-    public void insertStaffData(){
-        String age=Sage.getText().toString();
-        String location=slocation.getText().toString();
-        String staffName=staffname.getText().toString();
-        String working_since=workingsince.getText().toString();
-        String staffID=staffid.getText().toString();
-        staffModel s=new staffModel(age,location,staffID,staffName,working_since);
-        staffDB.push().setValue(s);
-        Toast.makeText(addStaff.this,"Staff Added",Toast.LENGTH_SHORT).show();
+    private String getFileExtension(Uri mUri){
+        ContentResolver cr=getContentResolver();
+        MimeTypeMap mime=MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cr.getType(mUri));
     }
 }
 
