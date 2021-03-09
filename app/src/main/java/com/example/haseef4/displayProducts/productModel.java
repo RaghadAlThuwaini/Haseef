@@ -50,10 +50,8 @@ public class productModel {
     }
 
     public void setRestock(Long restock) {
-//        Sref = FirebaseDatabase.getInstance().getReference().child("Sensors");
-//        String getReadaleWeight = Sref.child(getSensor()).child("Weight").get().toString();
-//        this.restock = Long.valueOf(getReadaleWeight);
-        this.restock = restock;
+     this.restock=restock;
+
     }
 
     public void setCompany(String company) {
