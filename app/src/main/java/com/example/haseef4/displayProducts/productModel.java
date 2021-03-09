@@ -10,12 +10,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class productModel {
 
-    String name, image,company,product_id, sensor,product_number;
+    String name,location, image,company,product_id, sensor,product_number;
     Long restock, weight;
 //    private DatabaseReference Rref;
 //    private DatabaseReference Sref;
 
-    public productModel(String name, Long restock, String image,String company,String product_id, Long weight,String sensor,String product_number) {
+    public productModel(String name, Long restock, String location,String image,String company,String product_id, Long weight,String sensor,String product_number) {
         this.name = name;
         this.restock = restock;
         this.image = image;
@@ -24,9 +24,10 @@ public class productModel {
         this.weight = weight;
         this.sensor = sensor;
         this.product_number=product_number;
+        this.location=location;
     }
 
-    public productModel() {
+    public productModel(String name, String s, String compeny, String plocation, String id) {
     }
 
     public String getImage() {

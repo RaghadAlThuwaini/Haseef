@@ -1,10 +1,12 @@
 package com.example.haseef4;
 
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -14,10 +16,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.haseef4.displayProducts.productModel;
 import com.example.haseef4.ui.main.productadd;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 //import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -33,6 +37,7 @@ public class addproducts extends AppCompatActivity {
     EditText addcompany;
     EditText addlocation;
     EditText addid;
+
     Button btnInsertData;
     Button adchocolate;
     Button btInsertDataJuices;
@@ -40,12 +45,13 @@ public class addproducts extends AppCompatActivity {
 
     public Uri imageUri;
     private ImageView imgview;
-    private FirebaseStorage storage;
-    private StorageReference storageReference;
+    //private FirebaseStorage storage;
+   // private StorageReference storageReference;
 
     DatabaseReference productDbRef;
-    FirebaseStorage mStorageRef;
-
+    //FirebaseStorage mStorageRef;
+    private  DatabaseReference root=FirebaseDatabase.getInstance().getReference().child("products");
+    private  StorageReference reference1=FirebaseStorage.getInstance().getReference();
 
 
     @Override
@@ -61,24 +67,23 @@ public class addproducts extends AppCompatActivity {
         adchocolate = findViewById(R.id.adchocolate);
         btInsertDataJuices=findViewById(R.id.btInsertDataJuices);
         btnInsertData = findViewById(R.id.btInsertData);
-        storage = FirebaseStorage.getInstance();
+        //storage = FirebaseStorage.getInstance();
         imgview= findViewById(R.id.imgview);
-        storageReference  =storage.getReference();
+      //  storageReference  =storage.getReference();
         productDbRef= FirebaseDatabase.getInstance().getReference().child("products");
         // method for chooseing pic
+
         imgview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                choosePicture();
+                Intent gallaryIntent=new Intent();
+                gallaryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                gallaryIntent.setType("image/*");
+                startActivityForResult(gallaryIntent,2);
+
 
             }
-            private void choosePicture(){
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(intent,1);
 
-            }
 
         });
         ImageView back_icons = findViewById(R.id.back);
@@ -99,6 +104,12 @@ public class addproducts extends AppCompatActivity {
         btnInsertData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(imageUri!=null){}
+                else{
+                    Toast.makeText(addproducts.this,"please select an image",Toast.LENGTH_SHORT).show();
+                }
+
+                uploadToFirebase(imageUri);
                 String mproduct = adproduct.getText().toString();
                 String  mcompany= addcompany.getText().toString();
                 String mlocation = addlocation.getText().toString();
@@ -115,6 +126,12 @@ public class addproducts extends AppCompatActivity {
         adchocolate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(imageUri!=null){}
+                else{
+                    Toast.makeText(addproducts.this,"please select an image",Toast.LENGTH_SHORT).show();
+                }
+
+                uploadToFirebase(imageUri);
                 String chproduct = adproduct.getText().toString();
                 String  chcompany= addcompany.getText().toString();
                 String chlocation = addlocation.getText().toString();
@@ -128,6 +145,12 @@ public class addproducts extends AppCompatActivity {
         btInsertDataJuices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(imageUri!=null){}
+                else{
+                    Toast.makeText(addproducts.this,"please select an image",Toast.LENGTH_SHORT).show();
+                }
+
+                uploadToFirebase(imageUri);
                 String juproduct = adproduct.getText().toString();
                 String  jucompany= addcompany.getText().toString();
                 String julocation = addlocation.getText().toString();
@@ -145,10 +168,10 @@ public class addproducts extends AppCompatActivity {
         @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
-            if(requestCode==1 && resultCode==RESULT_OK&& data!=null && data.getData()!=null){
+            if(requestCode==1 && resultCode==RESULT_OK && data!=null){
                 imageUri = data.getData();
                 imgview.setImageURI(imageUri);
-                uploadPicture();
+               // uploadPicture();
             }
 
 
@@ -179,14 +202,14 @@ public class addproducts extends AppCompatActivity {
 
         final String randomKey = UUID.randomUUID().toString();
         //  Uri file =Uri.fromFile(new File("path/to/image/rivers.jpg"));
-        StorageReference riverRef= storageReference.child("imageg"+ randomKey);
+        StorageReference riverRef= reference1.child("imageg"+ randomKey);
 
         riverRef.putFile(imageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         pd.dismiss();
-                     //   Snackbar.make(findViewById(android.R.id.content),"image upload",Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(findViewById(android.R.id.content),"image upload",Snackbar.LENGTH_LONG).show();
 
                     }
                 })
@@ -207,6 +230,56 @@ public class addproducts extends AppCompatActivity {
 
     }
     // for choosinh insaide
+
+
+    private void uploadToFirebase(Uri uri){
+        StorageReference fileRef=reference1.child(System.currentTimeMillis()+ "." + getFileExtension(uri));
+        fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        String name=adproduct.getText().toString();
+                        String compeny=addcompany.getText().toString();
+                        String plocation=addlocation.getText().toString();
+                        String id=addid.getText().toString();
+
+                        productModel p=new productModel(name,uri.toString(),compeny,plocation,id);
+                        productDbRef.push().setValue(p);
+                        productModel model=new productModel(name,uri.toString(),compeny,plocation,id);
+                        String modelId=root.push().getKey();
+                        root.child(modelId).setValue(model);
+                        Toast.makeText(addproducts.this , " uploaded successfully",Toast.LENGTH_LONG).show();
+
+                    }
+                });
+            }
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(addproducts.this , " uploading fail",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+    private String getFileExtension(Uri mUri){
+        ContentResolver cr1=getContentResolver();
+        MimeTypeMap mime=MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cr1.getType(mUri));
+    }
+
+
+
+
+
+
+
+
 
 
 
