@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Haseef4">
-        <activity android:name=".notification"/>
+        <activity android:name=".displayProducts.product_Staff"></activity>
+        <activity android:name=".notification" />
         <activity android:name=".addStaff" />
         <activity android:name=".editStaff" />
         <activity android:name=".setting" /> <!-- <activity -->
@@ -44,7 +45,6 @@
         <activity android:name=".Login" />
         <activity android:name=".displayStaff" />
         <activity android:name=".addproducts" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

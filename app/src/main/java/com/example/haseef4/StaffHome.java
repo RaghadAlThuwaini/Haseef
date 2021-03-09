@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.haseef4.displayProducts.product;
+import com.example.haseef4.displayProducts.product_Staff;
 import com.example.haseef4.displayRestock.restock;
 
 public class StaffHome extends AppCompatActivity {
@@ -82,7 +83,7 @@ public class StaffHome extends AppCompatActivity {
     }
 
         public void goToproduct(){
-            startActivity(new Intent(this, product.class));
+            startActivity(new Intent(this, product_Staff.class));
         }
 
         public void goTorestock(){
