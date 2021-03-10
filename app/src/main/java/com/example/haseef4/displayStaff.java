@@ -42,6 +42,7 @@ public class displayStaff extends AppCompatActivity {
         SPref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List.clear();
                 for(DataSnapshot staffSnapshot: snapshot.getChildren()){
                     staffModel s = staffSnapshot.getValue(staffModel.class);
                     List.add(s);
@@ -82,21 +83,21 @@ public class displayStaff extends AppCompatActivity {
                 finish();
             }
         });
-        ImageView notifications = findViewById(R.id.notifications);
-        notifications.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToNotification();
-            }
-        });
-
+//        ImageView notifications = findViewById(R.id.notifications);
+//        notifications.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                goToNotification();
+//            }
+//        });
+//
     }
     public void goToAddStaff(){
         Intent intent = new Intent(this, addStaff.class);
         startActivity(intent);
     }
-    public void goToNotification(){
-        startActivity(new Intent(this, notification.class));
-    }
+//    public void goToNotification(){
+//        startActivity(new Intent(this, notification.class));
+//    }
 
 }

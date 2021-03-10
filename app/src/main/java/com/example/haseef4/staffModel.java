@@ -7,8 +7,13 @@ public class staffModel {
     private String working_since;
     private String staffID;
     private String image;
+    public staffModel() {
 
-    public staffModel(String Age, String location, String staffID, String staffName, String working_since){
+    }
+
+
+
+    public staffModel(String Age, String location, String staffID, String staffName, String working_since, String image){
         this.age=Age;
         this.location=location;
         this.staffName=staffName;
@@ -24,8 +29,7 @@ public class staffModel {
         this.working_since = working_since;
     }
 
-    public staffModel(String age, String location, String staffID, String staffName, String working_since, String s) {
-    }
+
 
     public String getAge() {
         return age;

@@ -157,11 +157,23 @@ public class addStaff extends AppCompatActivity {
                         String staffID=staffid.getText().toString();
 
                         staffModel s=new staffModel(age,location,staffID,staffName,working_since,uri.toString());
-                        staffDB.push().setValue(s);
-                        staffModel model=new staffModel(location,staffID,staffName,working_since,uri.toString(), age);
-                        String modelId=root.push().getKey();
-                        root.child(modelId).setValue(model);
-                        Toast.makeText(addStaff.this , " uploaded successfully",Toast.LENGTH_LONG).show();
+                        staffDB.child(staffID).setValue(s).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(addStaff.this , " uploaded successfully",Toast.LENGTH_LONG).show();
+                                finish();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(addStaff.this , " Failed",Toast.LENGTH_LONG).show();
+                            }
+                        });
+                       // staffModel model=new staffModel(location,staffID,staffName,working_since,uri.toString(), age);
+//                        String modelId=root.push().getKey();
+//                        root.child(modelId).setValue(model);
+
+
 
                     }
                 });

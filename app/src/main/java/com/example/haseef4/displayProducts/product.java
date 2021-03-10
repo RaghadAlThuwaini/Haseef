@@ -48,12 +48,12 @@ public class product extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         ImageView notifications = findViewById(R.id.notifications);
-        notifications.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToNotification();
-            }
-        });
+//        notifications.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                goToNotification();
+//            }
+//        });
 
         ImageView add_icons = findViewById(R.id.add_icons);
         add_icons.setOnClickListener(new View.OnClickListener() {
