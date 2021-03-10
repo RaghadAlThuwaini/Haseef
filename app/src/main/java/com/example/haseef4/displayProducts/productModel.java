@@ -10,16 +10,17 @@ import com.google.firebase.database.ValueEventListener;
 
 public class productModel {
 
-    String name,location, image,company,product_id, sensor,product_number;
-    Long restock, weight;
+    String name,location, image,company,product_id, sensor,product_number,restock;
+    Long restock1, weight;
     String restock2;
+
 //    private DatabaseReference Rref;
 //    private DatabaseReference Sref;
 
     public productModel() {
     }
 
-    public productModel(String name, Long restock, String location, String image, String company, String product_id, Long weight, String sensor, String product_number) {
+  /*  public productModel(String name, String restock, String location, String image, String company, String product_id, Long weight, String sensor, String product_number) {
         this.name = name;
         this.restock = restock;
         this.image = image;
@@ -29,7 +30,7 @@ public class productModel {
         this.sensor = sensor;
         this.product_number=product_number;
         this.location=location;
-    }
+    }*/
 
     public productModel(String name, String company, String  restock2) {
         this.name = name;
@@ -38,11 +39,11 @@ public class productModel {
 
     }
 
-    public productModel(String name, String image, String compeny, String location, String product_id) {
+    public productModel(String name, String image, String company, String restock, String product_id) {
         this.name=name;
         this.image=image;
-        this.company=compeny;
-        this.location=location;
+        this.company=company;
+        this.restock=restock;
         this.product_id=product_id;
     }
 
@@ -62,11 +63,11 @@ public class productModel {
         this.name = name;
     }
 
-    public Long getRestock() {
+    public String getRestock() {
         return restock;
     }
 
-    public void setRestock(Long restock) {
+    public void setRestock(String restock) {
      this.restock=restock;
 
     }

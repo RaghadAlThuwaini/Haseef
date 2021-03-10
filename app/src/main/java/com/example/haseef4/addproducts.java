@@ -246,9 +246,10 @@ public class addproducts extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         String name = adproduct.getText().toString();
                         String compeny = addcompany.getText().toString();
-                        String plocation =  addrestock.getText().toString();
+                        // plocation =  addrestock.getText().toString();
+                       String restock = addrestock.getText().toString();
                         String id = addid.getText().toString();
-                        productModel model = new productModel(name, uri.toString(), compeny, plocation, id);
+                        productModel model = new productModel(name, uri.toString(), compeny, restock, id);
                         //getImage = model.getImage();
                         productDbRef.child("Juices").child(id).setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -282,9 +283,9 @@ public class addproducts extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         String name = adproduct.getText().toString();
                         String compeny = addcompany.getText().toString();
-                        String plocation =  addrestock.getText().toString();
+                       String restock=addrestock.getText().toString();
                         String id = addid.getText().toString();
-                        productModel model = new productModel(name, uri.toString(), compeny, plocation, id);
+                        productModel model = new productModel(name, uri.toString(), compeny, restock, id);
                         //getImage = model.getImage();
                         productDbRef.child("Chocolate").child(id).setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override

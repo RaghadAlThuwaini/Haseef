@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.haseef4.displayProducts.product;
+import com.example.haseef4.displayProducts.product_Staff;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent homeIntent = new Intent(MainActivity.this, Login.class);
+                Intent homeIntent = new Intent(MainActivity.this, product_Staff.class);
                 startActivity(homeIntent);
                 finish();
             }
