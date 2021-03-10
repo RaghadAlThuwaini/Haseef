@@ -168,7 +168,7 @@ public class addproducts extends AppCompatActivity {
         @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
-            if(requestCode==1 && resultCode==RESULT_OK && data!=null){
+            if(requestCode==2 && resultCode==RESULT_OK && data!=null){
                 imageUri = data.getData();
                 imgview.setImageURI(imageUri);
                // uploadPicture();
@@ -202,7 +202,7 @@ public class addproducts extends AppCompatActivity {
 
         final String randomKey = UUID.randomUUID().toString();
         //  Uri file =Uri.fromFile(new File("path/to/image/rivers.jpg"));
-        StorageReference riverRef= reference1.child("imageg"+ randomKey);
+        StorageReference riverRef= reference1.child("image"+ randomKey);
 
         riverRef.putFile(imageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
