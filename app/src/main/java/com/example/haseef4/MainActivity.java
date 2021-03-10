@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.haseef4.displayProducts.product;
+
 public class MainActivity extends AppCompatActivity {
 
     private static int SPLASH_TIME_OUT = 4000;
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent homeIntent = new Intent(MainActivity.this, addproducts.class);
+                Intent homeIntent = new Intent(MainActivity.this, Login.class);
                 startActivity(homeIntent);
                 finish();
             }

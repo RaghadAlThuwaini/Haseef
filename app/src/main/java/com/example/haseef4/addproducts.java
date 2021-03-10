@@ -35,7 +35,7 @@ public class addproducts extends AppCompatActivity {
 
     EditText adproduct;
     EditText addcompany;
-    EditText addlocation;
+    EditText addrestock;
     EditText addid;
     EditText addImage;
     private ImageView imgview;
@@ -63,7 +63,7 @@ public class addproducts extends AppCompatActivity {
 
         adproduct = findViewById(R.id.adproduct);
         addcompany = findViewById(R.id.addcompany);
-        addlocation = findViewById(R.id.addlocation);
+        addrestock = findViewById(R.id.addlocation);
         addid = findViewById(R.id.addid);
 //        mStorageRef = FirebaseStorage.getInstance("image");
         adchocolate = findViewById(R.id.adchocolate);
@@ -246,7 +246,7 @@ public class addproducts extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         String name = adproduct.getText().toString();
                         String compeny = addcompany.getText().toString();
-                        String plocation = addlocation.getText().toString();
+                        String plocation =  addrestock.getText().toString();
                         String id = addid.getText().toString();
                         productModel model = new productModel(name, uri.toString(), compeny, plocation, id);
                         //getImage = model.getImage();
@@ -282,7 +282,7 @@ public class addproducts extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         String name = adproduct.getText().toString();
                         String compeny = addcompany.getText().toString();
-                        String plocation = addlocation.getText().toString();
+                        String plocation =  addrestock.getText().toString();
                         String id = addid.getText().toString();
                         productModel model = new productModel(name, uri.toString(), compeny, plocation, id);
                         //getImage = model.getImage();
@@ -319,7 +319,7 @@ public class addproducts extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         String name = adproduct.getText().toString();
                         String compeny = addcompany.getText().toString();
-                        String plocation = addlocation.getText().toString();
+                        String plocation =  addrestock.getText().toString();
                         String id = addid.getText().toString();
                         productModel model = new productModel(name, uri.toString(), compeny, plocation, id);
                         //getImage = model.getImage();

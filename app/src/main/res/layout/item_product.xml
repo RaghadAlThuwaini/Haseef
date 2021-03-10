@@ -111,18 +111,6 @@
         android:visibility="visible"
         tools:visibility="visible"
         android:layout_marginStart="260dp" />
-    <TextView
-        android:layout_below="@+id/productID_txt"
-        android:id="@+id/productNumber_txt"
-        android:text="Product Number:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:visibility="visible"
-        tools:visibility="visible"
-        android:layout_marginStart="150dp" />
 
     <ImageView
         android:id="@+id/productImage"
@@ -130,7 +118,33 @@
         android:layout_width="130dp"
         android:layout_marginTop="35dp"
         />
+    <ImageButton
+        android:id="@+id/deleteBtnProduct"
+        android:layout_width="14dp"
+        android:layout_height="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="360dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_trash"
+        android:drawableBottom="@drawable/ic_trash"
+        tools:ignore="ContentDescription" />
 
+    <ImageButton
+        android:id="@+id/editBtnProduct"
+        android:layout_width="14dp"
+        android:layout_height="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/ic_edit"
+        android:drawableBottom="@drawable/ic_edit"
+        tools:ignore="ContentDescription" />
     <View
         android:layout_height="1px"
         android:layout_width="match_parent"

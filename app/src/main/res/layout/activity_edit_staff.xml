@@ -24,7 +24,19 @@ tools:context=".editStaff">
         android:paddingTop="0dp"
         android:gravity="center_vertical"
     tools:visibility="visible" />
-    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="147dp"
+        android:layout_marginTop="-100dp"
+        android:layout_weight="1"
+        android:text="Upadte Staff "
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_height="wrap_content"
@@ -98,22 +110,23 @@ tools:context=".editStaff">
             tools:visibility="visible" />
     </com.google.android.material.textfield.TextInputLayout>
 
-<TextView
-    android:id="@+id/staffNameEdit_txt"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="100dp"
-    android:layout_marginTop="150dp"
-    android:layout_marginBottom="5dp"
-    android:text="Staff name:"
-    android:visibility="visible"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.259"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.27"
-    tools:visibility="visible" />
+    <TextView
+        android:id="@+id/staffNameEdit_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="5dp"
+        android:text="Staff name:"
+        android:textColor="#3F51B5"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.27"
+        tools:visibility="visible" />
 
 <!--    <com.google.android.material.textfield.TextInputLayout-->
 <!--        android:layout_height="wrap_content"-->
@@ -138,23 +151,24 @@ tools:context=".editStaff">
 <!--    tools:visibility="visible" />-->
 <!--    </com.google.android.material.textfield.TextInputLayout>-->
 
-<TextView
-    android:id="@+id/StaffIDEdit_txt"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/staffNameEdit_txt"
-    android:layout_marginLeft="100dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
-    android:text="Staff ID:"
-    android:visibility="visible"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.316"
-    tools:visibility="visible" />
+    <TextView
+        android:id="@+id/StaffIDEdit_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/staffNameEdit_txt"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Staff ID:"
+        android:textColor="#3F51B5"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.316"
+        tools:visibility="visible" />
 
 <!--    <com.google.android.material.textfield.TextInputLayout-->
 <!--        android:layout_height="wrap_content"-->
@@ -179,23 +193,24 @@ tools:context=".editStaff">
 <!--    tools:visibility="visible" />-->
 <!--    </com.google.android.material.textfield.TextInputLayout>-->
 
-<TextView
-    android:id="@+id/ageEdit_txt"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/StaffIDEdit_txt"
-    android:layout_marginLeft="100dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
-    android:text="Staff age:"
-    android:visibility="visible"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.248"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.36"
-    tools:visibility="visible" />
+    <TextView
+        android:id="@+id/ageEdit_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/StaffIDEdit_txt"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Staff age:"
+        android:textColor="#3F51B5"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.248"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36"
+        tools:visibility="visible" />
 <!--    <com.google.android.material.textfield.TextInputLayout-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:layout_width="wrap_content">-->
@@ -219,23 +234,24 @@ tools:context=".editStaff">
 <!--    tools:visibility="visible" />-->
 <!--    </com.google.android.material.textfield.TextInputLayout>-->
 
-<TextView
-    android:id="@+id/locationEdit_txt"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/ageEdit_txt"
-    android:layout_marginLeft="100dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
-    android:text="Staff location:"
-    android:visibility="visible"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.28"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.41"
-    tools:visibility="visible" />
+    <TextView
+        android:id="@+id/locationEdit_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ageEdit_txt"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Staff location:"
+        android:textColor="#3F51B5"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41"
+        tools:visibility="visible" />
 <!--    <com.google.android.material.textfield.TextInputLayout-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:layout_width="wrap_content">-->
@@ -258,37 +274,40 @@ tools:context=".editStaff">
 <!--    tools:visibility="visible" />-->
 <!--    </com.google.android.material.textfield.TextInputLayout>-->
 
-<TextView
-    android:id="@+id/workingEdit_txt"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/locationEdit_txt"
-    android:layout_marginLeft="100dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
-    android:text="working since:"
-    android:visibility="visible"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.261"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.487"
-    tools:visibility="visible" />
+    <TextView
+        android:id="@+id/workingEdit_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/locationEdit_txt"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="working since:"
+        android:textColor="#3F51B5"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.487"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/updateBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_below="@id/workingEdit_txt"
+        android:layout_marginTop="15dp"
+        android:onClick="update"
         android:text="Update"
+        android:layout_marginLeft="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597"
-        android:onClick="update"/>
+        app:layout_constraintVertical_bias="0.597" />
 
     <androidx.constraintlayout.widget.Barrier
     android:id="@+id/barrier"
