@@ -155,6 +155,7 @@ public class addStaff extends AppCompatActivity {
                         String staffName=staffname.getText().toString();
                         String working_since=workingsince.getText().toString();
                         String staffID=staffid.getText().toString();
+
                         staffModel s=new staffModel(age,location,staffID,staffName,working_since,uri.toString());
                         staffDB.push().setValue(s);
                         staffModel model=new staffModel(location,staffID,staffName,working_since,uri.toString(), age);

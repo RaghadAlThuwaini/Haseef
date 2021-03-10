@@ -37,6 +37,7 @@ public class addproducts extends AppCompatActivity {
     EditText addcompany;
     EditText addlocation;
     EditText addid;
+    private ImageView imgview;
 
     Button btnInsertData;
     Button adchocolate;
@@ -44,7 +45,7 @@ public class addproducts extends AppCompatActivity {
 
 
     public Uri imageUri;
-    private ImageView imgview;
+
     //private FirebaseStorage storage;
    // private StorageReference storageReference;
 
@@ -272,9 +273,6 @@ public class addproducts extends AppCompatActivity {
         MimeTypeMap mime=MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cr1.getType(mUri));
     }
-
-
-
 
 
 

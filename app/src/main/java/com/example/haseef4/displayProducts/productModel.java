@@ -27,7 +27,12 @@ public class productModel {
         this.location=location;
     }
 
-    public productModel(String name, String s, String compeny, String plocation, String id) {
+    public productModel(String name, String image, String compeny, String location, String product_id) {
+        this.name=name;
+        this.image=image;
+        this.company=compeny;
+        this.location=location;
+        this.product_id=product_id;
     }
 
     public String getImage() {
@@ -53,6 +58,14 @@ public class productModel {
     public void setRestock(Long restock) {
      this.restock=restock;
 
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getLocation() {
+        return location;
     }
 
     public void setCompany(String company) {
