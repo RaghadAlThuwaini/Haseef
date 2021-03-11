@@ -35,7 +35,7 @@ public class addproducts extends AppCompatActivity {
 
     EditText adproduct;
     EditText addcompany;
-    EditText addrestock;
+    EditText addlocation;
     EditText addid;
     EditText addImage;
     private ImageView imgview;
@@ -63,7 +63,7 @@ public class addproducts extends AppCompatActivity {
 
         adproduct = findViewById(R.id.adproduct);
         addcompany = findViewById(R.id.addcompany);
-        addrestock = findViewById(R.id.addlocation);
+        addlocation = findViewById(R.id.addlocation);
         addid = findViewById(R.id.addid);
 //        mStorageRef = FirebaseStorage.getInstance("image");
         adchocolate = findViewById(R.id.adchocolate);
@@ -245,11 +245,10 @@ public class addproducts extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         String name = adproduct.getText().toString();
-                        String compeny = addcompany.getText().toString();
-                        // plocation =  addrestock.getText().toString();
-                       String restock = addrestock.getText().toString();
+                        String company = addcompany.getText().toString();
+                        String plocation = addlocation.getText().toString();
                         String id = addid.getText().toString();
-                        productModel model = new productModel(name, uri.toString(), compeny, restock, id);
+                        productModel model = new productModel(name, uri.toString(), company, plocation, id);
                         //getImage = model.getImage();
                         productDbRef.child("Juices").child(id).setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -283,9 +282,9 @@ public class addproducts extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         String name = adproduct.getText().toString();
                         String compeny = addcompany.getText().toString();
-                       String restock=addrestock.getText().toString();
+                        String plocation = addlocation.getText().toString();
                         String id = addid.getText().toString();
-                        productModel model = new productModel(name, uri.toString(), compeny, restock, id);
+                        productModel model = new productModel(name, uri.toString(), compeny, plocation, id);
                         //getImage = model.getImage();
                         productDbRef.child("Chocolate").child(id).setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -320,7 +319,7 @@ public class addproducts extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         String name = adproduct.getText().toString();
                         String compeny = addcompany.getText().toString();
-                        String plocation =  addrestock.getText().toString();
+                        String plocation = addlocation.getText().toString();
                         String id = addid.getText().toString();
                         productModel model = new productModel(name, uri.toString(), compeny, plocation, id);
                         //getImage = model.getImage();

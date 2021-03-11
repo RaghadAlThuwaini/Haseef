@@ -35,6 +35,7 @@ public class productfragment2 extends Fragment {
         JPref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                juicesPlist.clear();
                 for(DataSnapshot productSnapshot: snapshot.getChildren()){
                     productModel P = productSnapshot.getValue(productModel.class);
                     juicesPlist.add(P);

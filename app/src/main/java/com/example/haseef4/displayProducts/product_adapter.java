@@ -58,7 +58,7 @@ public class product_adapter extends ArrayAdapter<productModel> {
         productCompany.setText(P.getCompany());
         productID.setText(P.getProduct_id());
         productRestock.setText(String.valueOf(P.getRestock()));
-        product_number.setText(P.getProduct_number());
+        //product_number.setText(P.getProduct_number());
         Picasso.get().load(P.getImage()).into(imageView);
 
 
@@ -68,7 +68,7 @@ public class product_adapter extends ArrayAdapter<productModel> {
                 PRef.child(P.getProduct_id()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(getContext(), "Staff deleted", LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "product deleted", LENGTH_LONG).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

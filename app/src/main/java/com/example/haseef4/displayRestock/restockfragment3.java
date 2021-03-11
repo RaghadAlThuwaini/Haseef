@@ -52,6 +52,7 @@ public class restockfragment3 extends Fragment {
         getRestockProducts.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                chocolatePlist.clear();
                 for (DataSnapshot productSnapshot : snapshot.getChildren()) {
                     productModel P = productSnapshot.getValue(productModel.class);
                     chocolatePlist.add(P);

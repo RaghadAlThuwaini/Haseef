@@ -3,6 +3,7 @@ package com.example.haseef4.displayProducts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
@@ -71,23 +72,24 @@ public class editProduct extends AppCompatActivity {
 
         }
         public void update (View view){
-            String staffName, comapnyProdcut, restockProduct,image;
-            staffName = nameIn.getText().toString();
-            restockProduct = restockIn.getText().toString();
-            comapnyProdcut = companyIn.getText().toString();
+            String productName, comapnyProdcut,image;
+            long restockProduct;
+            productName = String.valueOf(nameIn.getText());
+            restockProduct = Integer.parseInt(String.valueOf(restockIn.getText()));
+            comapnyProdcut = String.valueOf(companyIn.getText());
 
-            productModel s = new productModel(staffName,  comapnyProdcut, restockProduct);
+            productModel p = new productModel(productName,  comapnyProdcut, restockProduct);
            // Picasso.get().load(s.getImage()).into(imageView);
-            s.setProduct_id(ID);
+            p.setProduct_id(ID);
            // String loction = PRef.child("products").child()
-            Query QueryChocolate = PRef.orderByChild("products").startAt("C");
+            Query QueryChocolate = PRef.orderByChild("product_id").equalTo(ID).limitToFirst(1);
             QueryChocolate.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    PRef.child("products").child("Chocolate").child(ID).setValue(s).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    PRef.child("products").child("Chocolate").child(ID).setValue(p).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Toast.makeText(editProduct.this, "Update successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(editProduct.this, "Updated successfully", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -99,11 +101,11 @@ public class editProduct extends AppCompatActivity {
 
             });
 
-            Query QueryDairyProducts = PRef.orderByChild("products").startAt("D");
+            Query QueryDairyProducts = PRef.orderByChild("product_id").equalTo(ID).limitToFirst(1);
             QueryDairyProducts.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    PRef.child("products").child("dairyProducts").child(ID).setValue(s).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    PRef.child("products").child("dairyProducts").child(ID).setValue(p).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(editProduct.this, "Update successfully ", Toast.LENGTH_SHORT).show();
@@ -117,17 +119,19 @@ public class editProduct extends AppCompatActivity {
                 }
 
             });
-            Query QueryJuices = PRef.orderByChild("products").startAt("J");
+            Query QueryJuices = PRef.orderByChild("product_id").equalTo(ID).limitToFirst(1);
             QueryJuices.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    PRef.child("products").child("Juices").child(ID).setValue(s).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+                    PRef.child("products").child("Juices").child(ID).setValue(p).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(editProduct.this, "Update successfully", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
+
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {

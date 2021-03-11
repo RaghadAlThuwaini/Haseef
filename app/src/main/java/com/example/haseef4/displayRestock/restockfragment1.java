@@ -61,6 +61,7 @@ public class restockfragment1 extends Fragment {
         getRestockProducts.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                dairyPlist.clear();
                 for(DataSnapshot productSnapshot: snapshot.getChildren()){
                     productModel P = productSnapshot.getValue(productModel.class);
                     dairyPlist.add(P);

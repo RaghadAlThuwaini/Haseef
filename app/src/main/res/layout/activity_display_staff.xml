@@ -10,7 +10,7 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/toolbar_admin" />
+        layout="@layout/toolbar" />
 
     <ListView
         android:id="@+id/staffList_view"

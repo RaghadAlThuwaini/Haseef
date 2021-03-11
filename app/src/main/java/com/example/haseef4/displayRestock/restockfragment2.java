@@ -55,6 +55,7 @@ public class restockfragment2 extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot productSnapshot: snapshot.getChildren()){
+                    juicesPlist.clear();
                     productModel P = productSnapshot.getValue(productModel.class);
                     juicesPlist.add(P);
                     toNotifyProducts.add(P);

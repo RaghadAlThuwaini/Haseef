@@ -10,9 +10,9 @@ import com.google.firebase.database.ValueEventListener;
 
 public class productModel {
 
-    String name,location, image,company,product_id, sensor,product_number,restock;
-    Long restock1, weight;
-    String restock2;
+    String name,location, image,company,product_id, sensor,product_number;
+    long restock1, weight, restock;
+    Long restock2;
 
 //    private DatabaseReference Rref;
 //    private DatabaseReference Sref;
@@ -32,18 +32,26 @@ public class productModel {
         this.location=location;
     }*/
 
-    public productModel(String name, String company, String  restock2) {
+    public productModel(String name, String company, long  restock) {
         this.name = name;
         this.company = company;
-        this.restock2 = restock2;
+        this.restock = restock;
 
     }
 
-    public productModel(String name, String image, String company, String restock, String product_id) {
+    public productModel(String name, String image, String company, long restock, String product_id) {
         this.name=name;
         this.image=image;
         this.company=company;
         this.restock=restock;
+        this.product_id=product_id;
+    }
+
+    public productModel(String name, String image, String company, String location, String product_id) {
+        this.name=name;
+        this.image=image;
+        this.company=company;
+        this.location=location;
         this.product_id=product_id;
     }
 
@@ -63,13 +71,15 @@ public class productModel {
         this.name = name;
     }
 
-    public String getRestock() {
+    public long getRestock() {
         return restock;
     }
 
-    public void setRestock(String restock) {
-     this.restock=restock;
-
+    public void setRestock(long restock) {
+//        Sref = FirebaseDatabase.getInstance().getReference().child("Sensors");
+//        String getReadaleWeight = Sref.child(getSensor()).child("Weight").get().toString();
+//        this.restock = Long.valueOf(getReadaleWeight);
+        this.restock = restock;
     }
 
     public void setLocation(String location) {
@@ -116,5 +126,13 @@ public class productModel {
 
     public void setSensor(String sensor) {
         this.sensor = sensor;
+    }
+
+    public Long getRestock2() {
+        return restock2;
+    }
+
+    public void setRestock2(Long restock2) {
+        this.restock2 = restock2;
     }
 }
