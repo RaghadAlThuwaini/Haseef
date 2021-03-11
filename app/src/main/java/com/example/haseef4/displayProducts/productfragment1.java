@@ -23,8 +23,8 @@ public class productfragment1 extends Fragment {
 
     ListView productList;
     DatabaseReference DPref;
-    ArrayList<productModel> dairyPlist;
-
+    ArrayList<productModelArduino> dairyPlist;
+     Long weight,restock;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -33,16 +33,18 @@ public class productfragment1 extends Fragment {
         productList = (ListView) view.findViewById(R.id.dairy_products_view);
         dairyPlist = new ArrayList<>();
 
-        DPref = FirebaseDatabase.getInstance().getReference().child("products").child("dairyProducts");
+        DPref = FirebaseDatabase.getInstance().getReference().child("productArduino").child("dairyProducts");
         DPref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 dairyPlist.clear();
                 for(DataSnapshot productSnapshot: snapshot.getChildren()){
-                    productModel P = productSnapshot.getValue(productModel.class);
+
+                    productModelArduino P = productSnapshot.getValue(productModelArduino.class);
+
                     dairyPlist.add(P);
                 }
-                product_adapter adapter = new product_adapter(getContext(), dairyPlist);
+                product_adapterArduino adapter = new product_adapterArduino(getContext(), dairyPlist);
                 productList.setAdapter(adapter);
             }
 

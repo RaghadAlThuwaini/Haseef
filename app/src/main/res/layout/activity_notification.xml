@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".notification">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    tools:context=".notification"
+    android:orientation="vertical">
     <include
         android:id="@+id/include"
         layout="@layout/toolbar" />
 
-    <ListView
-        android:id="@+id/toNotify_listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="150dp" />
 
-</FrameLayout>
+    <ListView
+
+        android:id="@+id/toNotify_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="340dp"
+        android:layout_marginTop="140dp"
+
+        android:foregroundGravity="center_horizontal"
+
+
+        />
+<ListView
+
+        android:id="@+id/toNotify_listview2"
+        android:layout_width="fill_parent"
+
+        android:layout_height="200dp"
+       android:layout_below="@id/toNotify_listview"
+    android:foregroundGravity="center_horizontal"
+       />
+
+</RelativeLayout>

@@ -156,11 +156,12 @@ public class addStaff extends AppCompatActivity {
                         String working_since=workingsince.getText().toString();
                         String staffID=staffid.getText().toString();
 
-                        staffModel s=new staffModel(age,location,staffID,staffName,working_since,uri.toString());
-                        staffDB.push().setValue(s);
-                        staffModel model=new staffModel(location,staffID,staffName,working_since,uri.toString(), age);
-                        String modelId=root.push().getKey();
-                        root.child(modelId).setValue(model);
+                     //   staffModel s=new staffModel(age,location,staffID,staffName,working_since,uri.toString());
+                      //  staffDB.push().setValue(s);
+                        staffModel s=new staffModel(location,staffID,staffName,working_since,uri.toString(), age);
+                        staffDB.child(staffID).setValue(s);
+//                        String modelId=root.push().getKey();
+//                        root.child(modelId).setValue(model);
                         Toast.makeText(addStaff.this , " uploaded successfully",Toast.LENGTH_LONG).show();
 
                     }

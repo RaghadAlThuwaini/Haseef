@@ -8,22 +8,29 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.haseef4.displayProducts.productModel;
+import com.example.haseef4.displayProducts.productModelArduino;
 import com.example.haseef4.displayProducts.product_adapter;
+import com.example.haseef4.displayProducts.product_adapterArduino;
 
 import java.util.ArrayList;
 
 
 public class notification extends AppCompatActivity {
-    ListView list;
+    ListView list,list2;
     public static ArrayList<productModel> toNotifyProducts = new ArrayList<>();
-
+    public static ArrayList<productModelArduino> toNotifyProductsArduino = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
+
         list = (ListView) findViewById(R.id.toNotify_listview);
+        list2 = (ListView) findViewById(R.id.toNotify_listview2);
         product_adapter adapter = new product_adapter(getBaseContext(), toNotifyProducts);
         list.setAdapter(adapter);
+
+        product_adapterArduino adapter2 = new product_adapterArduino(getBaseContext(), toNotifyProductsArduino);
+        list2.setAdapter(adapter2);
 
         ImageView back_icons = findViewById(R.id.back);
         back_icons.setOnClickListener(new View.OnClickListener() {

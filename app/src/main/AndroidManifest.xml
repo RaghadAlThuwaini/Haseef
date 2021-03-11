@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Haseef4">
-        <activity android:name=".displayProducts.editProduct"></activity>
+        <activity android:name=".notifaction_Arduino"></activity>
+        <activity android:name=".editStaff$notifaction_Arduino" />
+        <activity android:name=".displayProducts.editProduct" />
         <activity android:name=".displayProducts.product_Staff" />
         <activity android:name=".notification" />
         <activity android:name=".addStaff" />

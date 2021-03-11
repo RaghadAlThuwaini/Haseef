@@ -1,12 +1,9 @@
 package com.example.haseef4.displayRestock;
 
-import android.annotation.SuppressLint;
-import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,10 +19,9 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import com.example.haseef4.MainActivity;
 import com.example.haseef4.R;
-import com.example.haseef4.displayProducts.productModel;
-import com.example.haseef4.displayProducts.product_adapter;
+import com.example.haseef4.displayProducts.productModelArduino;
+import com.example.haseef4.displayProducts.product_adapterArduino;
 import com.example.haseef4.notification;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,14 +32,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import static com.example.haseef4.notification.toNotifyProducts;
+import static com.example.haseef4.notification.toNotifyProductsArduino;
 
 public class restockfragment1 extends Fragment {
 
     ListView productList;
     DatabaseReference DPref;
     DatabaseReference restockEventsRef;
-    ArrayList<productModel> dairyPlist;
+    ArrayList<productModelArduino> dairyPlist;
     //Long restockEvents;
 
     @Nullable
@@ -51,10 +47,10 @@ public class restockfragment1 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.restockfragment1_layout,container,false);
         productList = (ListView) view.findViewById(R.id.dairy_products_restock_view);
-        dairyPlist = new ArrayList<>();
+        dairyPlist = new ArrayList<productModelArduino>();
 
         //firebase reference on dairy products
-        DPref = FirebaseDatabase.getInstance().getReference().child("products").child("dairyProducts");
+        DPref = FirebaseDatabase.getInstance().getReference().child("productArduino").child("dairyProducts");
 
         //to get products with <=5 remain items
         Query getRestockProducts = DPref.orderByChild("restock").endAt(5);
@@ -63,12 +59,12 @@ public class restockfragment1 extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 dairyPlist.clear();
                 for(DataSnapshot productSnapshot: snapshot.getChildren()){
-                    productModel P = productSnapshot.getValue(productModel.class);
+                    productModelArduino P = productSnapshot.getValue(productModelArduino.class);
                     dairyPlist.add(P);
-                    toNotifyProducts.add(P);
+                    toNotifyProductsArduino.add(P);
                     Triggernotification(P.getName());
                 }
-                product_adapter adapter = new product_adapter(getContext(), dairyPlist);
+                product_adapterArduino adapter = new product_adapterArduino(getContext(), dairyPlist);
                 productList.setAdapter(adapter);
             }
 
