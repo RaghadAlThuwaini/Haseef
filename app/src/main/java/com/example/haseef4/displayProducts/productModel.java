@@ -11,8 +11,7 @@ import com.google.firebase.database.ValueEventListener;
 public class productModel {
 
     String name,location, image,company,product_id, sensor,product_number;
-    long restock1, weight, restock;
-    Long restock2;
+    long restock;
 
 //    private DatabaseReference Rref;
 //    private DatabaseReference Sref;
@@ -112,13 +111,6 @@ public class productModel {
         this.product_id = product_id;
     }
 
-    public Long getWeight() {
-        return weight;
-    }
-
-    public void setWeight(Long weight) {
-        this.weight = weight;
-    }
 
     public String getSensor() {
         return sensor;
@@ -128,11 +120,4 @@ public class productModel {
         this.sensor = sensor;
     }
 
-    public Long getRestock2() {
-        return restock2;
-    }
-
-    public void setRestock2(Long restock2) {
-        this.restock2 = restock2;
-    }
 }
