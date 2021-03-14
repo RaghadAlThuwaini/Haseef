@@ -8,7 +8,7 @@ public class productadd {
 
     public productadd() {
     }
-
+//
     public productadd(String product_name , String product_type, String product_location, String product_id) {
         this.product_name = product_name;
         this.product_type= product_type;
