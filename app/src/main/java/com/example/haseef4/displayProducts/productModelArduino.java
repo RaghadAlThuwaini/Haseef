@@ -5,27 +5,27 @@ import com.google.firebase.database.DatabaseReference;
 public class productModelArduino {
 
     String name,company,product_id, image;
-    Long restock, weight2, itemWight;
+    long restock, weight2, itemWeight;
     DatabaseReference PRef;
 
 
-    public productModelArduino(String name, String company, String products_id, String image, Long restock, Long weight2, Long itemWight) {
+    public productModelArduino(String name, String company, String products_id, String image, long restock, long weight2, long itemWeight) {
         this.name = name;
         this.company = company;
         this.product_id = products_id;
         this.image = image;
         this.restock = restock;
         this.weight2 = weight2;
-        this.itemWight=itemWight;
+        this.itemWeight=itemWeight;
     }
     public productModelArduino() {
     }
-    public Long getItemWight() {
-        return itemWight;
+    public long getItemWeight() {
+        return itemWeight;
     }
 
-    public void setItemWight(Long itemWight) {
-        this.itemWight = itemWight;
+    public void setItemWeight(long itemWeight) {
+        this.itemWeight = itemWeight;
     }
 
     public String getName() {
@@ -46,12 +46,12 @@ public class productModelArduino {
         this.company = company;
     }
 
-    public String getProducts_id() {
+    public String getProduct_id() {
         return product_id;
     }
 
-    public void setProducts_id(String products_id) {
-        this.product_id = products_id;
+    public void setProduct_id(String product_id) {
+        this.product_id = product_id;
     }
 
     public String getImage() {
@@ -62,22 +62,24 @@ public class productModelArduino {
         this.image = image;
     }
 
-    public Long getRestock() {
+    public long getRestock() {
         return restock;
     }
 
-    public void setRestock(Long restock) {
+    public void setRestock(long restock) {
         this.restock = restock;
     }
 
-    public Long getWeight2() {
+    public long getWeight2() {
         return weight2;
     }
 
-    public void setWeight2(Long weight2) {
+    public void setWeight2(long weight2) {
         if(weight2==0){
             setRestock((long) 0);
     }
+//        if(getItemWeight()>0L)
+//            setRestock((long)(weight2/getItemWeight()));
          //PRef.child("productArduino").child("dairyProducts").child("D1").child("restock").setValue(0);
         }
     }
