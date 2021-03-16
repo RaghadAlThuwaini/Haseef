@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/productNameStaff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+
+        android:visibility="visible"
+        tools:visibility="visible" />
+    <TextView
+        android:text="Product name:"
+        android:id="@+id/productName_txtStaff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        tools:visibility="visible" />
+    <TextView
+        android:layout_below="@+id/productCompanyStaff"
+        android:id="@+id/productRestockStaff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:layout_marginStart="260dp" />
+    <TextView
+        android:layout_below="@+id/productCompany_txtStaff"
+        android:id="@+id/productRestock_txtStaff"
+        android:text="Product restock:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:layout_marginStart="150dp" />
+
+    <TextView
+        android:layout_below="@+id/productNameStaff"
+        android:id="@+id/productCompanyStaff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:layout_marginStart="260dp" />
+    <TextView
+        android:layout_below="@+id/productName_txtStaff"
+        android:id="@+id/productCompany_txtStaff"
+        android:text="Company:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:layout_marginStart="150dp" />
+
+    <TextView
+        android:layout_below="@+id/productRestockStaff"
+        android:id="@+id/productIDStaff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:layout_marginStart="260dp" />
+    <TextView
+        android:layout_below="@+id/productRestock_txtStaff"
+        android:id="@+id/productID_txtStaff"
+        android:text="Product ID:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:layout_marginStart="150dp" />
+
+
+    <TextView
+        android:layout_below="@+id/productIDStaff"
+        android:id="@+id/productNumberStaff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:layout_marginStart="260dp" />
+
+    <ImageView
+        android:id="@+id/productImageStaff"
+        android:layout_height="70dp"
+        android:layout_width="130dp"
+        android:layout_marginTop="35dp"
+        />
+    <View
+        android:layout_height="1px"
+        android:layout_width="match_parent"
+        android:background="#aaa"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/productNumberStaff"/>
+
+</RelativeLayout>

@@ -17,7 +17,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="190dp"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="200dp"
             android:layout_marginBottom="5dp"
             android:visibility="visible"
             android:paddingBottom="0dp"
@@ -44,7 +44,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="190dp"
-            android:layout_marginTop="210dp"
+            android:layout_marginTop="230dp"
             android:layout_marginBottom="5dp"
             android:visibility="visible"
             android:paddingBottom="0dp"
@@ -62,7 +62,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="190dp"
-            android:layout_marginTop="240dp"
+            android:layout_marginTop="260dp"
             android:layout_marginBottom="5dp"
             android:visibility="visible"
             android:paddingBottom="0dp"
@@ -74,20 +74,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:id="@+id/companyLayout">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/companyEdit"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="190dp"
-            android:layout_marginTop="270dp"
-            android:layout_marginBottom="5dp"
-            android:visibility="visible"
-            android:paddingBottom="0dp"
-            android:paddingTop="0dp"
-            android:gravity="center_vertical"
-            tools:visibility="visible" />
-    </com.google.android.material.textfield.TextInputLayout>
+        android:id="@+id/companyLayout2"/>
+
 
 <!--    <com.google.android.material.textfield.TextInputLayout-->
 <!--        android:layout_height="wrap_content"-->
@@ -112,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="200dp"
         android:layout_marginBottom="5dp"
         android:text="Product name:"
         android:visibility="visible"
@@ -287,7 +275,9 @@
 
     <Button
         android:id="@+id/updateBtnProduct"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="140dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/company_txt"
         android:text="Update"
@@ -299,10 +289,24 @@
         app:layout_constraintVertical_bias="0.597"
         android:onClick="update"/>
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_height="wrap_content"
-        app:barrierDirection="top"
-        app:constraint_referenced_ids="staffNameEdit" />
+        android:layout_width="match_parent"
+        android:id="@+id/companyLayout">
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/companyEdit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_vertical"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:visibility="visible"
+        tools:visibility="visible" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </RelativeLayout>

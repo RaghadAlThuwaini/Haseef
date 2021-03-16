@@ -48,7 +48,7 @@ public class staff_adapter extends ArrayAdapter<staffModel> {
             staffAge = (TextView) convertView.findViewById(R.id.staffAge);
             staffLocation = (TextView) convertView.findViewById(R.id.location);
             staffWorking = (TextView) convertView.findViewById(R.id.working);
-            imageView = convertView.findViewById(R.id.staffImage);
+            imageView = convertView.findViewById(R.id.staffImage3);
             delete = convertView.findViewById(R.id.deleteBtn);
             edit = convertView.findViewById(R.id.editBtn);
 
@@ -86,6 +86,7 @@ public class staff_adapter extends ArrayAdapter<staffModel> {
                             editIntent.putExtra("age", s.getAge());
                             editIntent.putExtra("location", s.getLocation());
                             editIntent.putExtra("workingSince", s.getWorking_since());
+                            editIntent.putExtra("Image", s.getImage());
                             getContext().startActivity(editIntent);
                         }
                     });

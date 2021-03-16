@@ -13,7 +13,7 @@ public class staffModel {
 
 
 
-    public staffModel(String Age, String location, String staffID, String staffName, String working_since, String image){
+    public staffModel(String staffName,String Age, String location, String staffID,  String working_since, String image){
         this.age=Age;
         this.location=location;
         this.staffName=staffName;
@@ -22,11 +22,12 @@ public class staffModel {
         this.image = image;
     }
 
-    public staffModel(String staffName , String age, String location, String working_since) {
+    public staffModel(String staffName , String age, String location, String working_since,String image) {
         this.age = age;
         this.location = location;
         this.staffName = staffName;
         this.working_since = working_since;
+        this.image = image;
     }
 
 

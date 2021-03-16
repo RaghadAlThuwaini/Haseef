@@ -158,7 +158,8 @@ public class addStaff extends AppCompatActivity {
 
                      //   staffModel s=new staffModel(age,location,staffID,staffName,working_since,uri.toString());
                       //  staffDB.push().setValue(s);
-                        staffModel s=new staffModel(location,staffID,staffName,working_since,uri.toString(), age);
+                        //(String staffName , String age, String location, String working_since,String image)
+                        staffModel s=new staffModel(staffName,age, location,working_since,staffID,uri.toString());
                         staffDB.child(staffID).setValue(s);
 //                        String modelId=root.push().getKey();
 //                        root.child(modelId).setValue(model);
