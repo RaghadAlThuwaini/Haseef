@@ -82,8 +82,6 @@ public class addproducts extends AppCompatActivity {
                 gallaryIntent.setAction(Intent.ACTION_GET_CONTENT);
                 gallaryIntent.setType("image/*");
                 startActivityForResult(gallaryIntent, 2);
-
-
             }
 
 

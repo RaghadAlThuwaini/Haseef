@@ -13,6 +13,7 @@ public class productModel {
     String name,location, image,company,product_id, sensor,product_number;
     long restock;
 
+
 //    private DatabaseReference Rref;
 //    private DatabaseReference Sref;
 
@@ -31,10 +32,11 @@ public class productModel {
         this.location=location;
     }*/
 
-    public productModel(String name, String company, long  restock) {
+    public productModel(String name, String company, long  restock,String image) {
         this.name = name;
         this.company = company;
         this.restock = restock;
+        this.image = image;
 
     }
 

@@ -2,6 +2,10 @@ package com.example.haseef4.displayProducts;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +27,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 import static android.widget.Toast.LENGTH_LONG;
@@ -60,7 +65,10 @@ public class product_adapter extends ArrayAdapter<productModel> {
         productRestock.setText(String.valueOf(P.getRestock()));
         //product_number.setText(P.getProduct_number());
         Picasso.get().load(P.getImage()).into(imageView);
-
+//        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+//        byte[] b = P.getImage().getBytes();
+//        final Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
+//        bitmap.compress(Bitmap.CompressFormat.PNG,50,bs);
 
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,9 +91,11 @@ public class product_adapter extends ArrayAdapter<productModel> {
             @Override
             public void onClick(View v) {
                 Intent editIntent = new Intent(getContext(), editProduct.class);
+                Drawable image = imageView.getDrawable();
                 editIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 editIntent.putExtra("company", P.getCompany());
                 editIntent.putExtra("Image", P.getImage());
+//                editIntent.putExtra("Image", bs.toByteArray());
                 //editIntent.putExtra("age", P.getLocation());
                 editIntent.putExtra("name", P.getName());
                 editIntent.putExtra("product_id", P.getProduct_id());

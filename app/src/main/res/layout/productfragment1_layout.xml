@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".displayProducts.productfragment1">
+    tools:context=".displayProducts.productfragmentStaff1">
 
     <ListView
         android:id="@+id/dairy_products_view"

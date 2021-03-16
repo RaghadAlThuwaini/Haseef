@@ -3,14 +3,9 @@ package com.example.haseef4.displayProducts;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.haseef4.AdminHome;
-import com.example.haseef4.Login;
 import com.example.haseef4.R;
-import com.example.haseef4.StaffHome;
 import com.example.haseef4.addproducts;
-import com.example.haseef4.displayRestock.restock;
 import com.example.haseef4.notification;
-import com.example.haseef4.statistic;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.viewpager.widget.ViewPager;
@@ -18,12 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Toolbar;
-
-import com.google.firebase.database.DatabaseReference;
-
-import java.util.ArrayList;
 
 public class product_Staff extends AppCompatActivity {
 
@@ -38,12 +27,12 @@ public class product_Staff extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product__staff);
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
+        tabLayout = (TabLayout) findViewById(R.id.tabs2);
+        viewPager = (ViewPager) findViewById(R.id.view_pager2);
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        viewPagerAdapter.addFragment(new productfragment1(), "Dairy products");
-        viewPagerAdapter.addFragment(new productfragment2(), "Juices");
-        viewPagerAdapter.addFragment(new productfragment3(), "Chocolate");
+        viewPagerAdapter.addFragment(new productfragmentStaff1(), "Dairy products");
+        viewPagerAdapter.addFragment(new productfragmentStaff2(), "Juices");
+        viewPagerAdapter.addFragment(new productfragmentStaff3(), "Chocolate");
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 

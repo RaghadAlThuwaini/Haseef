@@ -1,7 +1,5 @@
 package com.example.haseef4.displayProducts;
-
 import com.google.firebase.database.DatabaseReference;
-
 public class productModelArduino {
 
     String name,company,product_id, image;

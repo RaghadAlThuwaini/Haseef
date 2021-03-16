@@ -41,11 +41,11 @@ public class productfragment1 extends Fragment {
                 for(DataSnapshot productSnapshot: snapshot.getChildren()){
 
                     productModelArduino P = productSnapshot.getValue(productModelArduino.class);
-
                     dairyPlist.add(P);
                 }
                 product_adapterArduino adapter = new product_adapterArduino(getContext(), dairyPlist);
                 productList.setAdapter(adapter);
+
             }
 
             @Override

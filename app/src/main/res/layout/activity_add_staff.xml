@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/include3"
-        layout="@layout/toolbar" />
+        layout="@layout/toolbar_admin" />
 
     <TextView
         android:id="@+id/textView13"
@@ -72,7 +72,7 @@
     <EditText
         android:id="@+id/locationtext"
         android:layout_width="97dp"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="#0C0C0C"
@@ -116,7 +116,7 @@
     <EditText
         android:id="@+id/agetext"
         android:layout_width="97dp"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -129,7 +129,7 @@
     <EditText
         android:id="@+id/staffnametext"
         android:layout_width="150dp"
-        android:layout_height="37dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="#040303"
@@ -145,7 +145,7 @@
     <EditText
         android:id="@+id/staffidtext"
         android:layout_width="150dp"
-        android:layout_height="37dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -159,7 +159,7 @@
     <EditText
         android:id="@+id/workingsincetext"
         android:layout_width="150dp"
-        android:layout_height="37dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
