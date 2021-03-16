@@ -20,6 +20,8 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.haseef4.R;
+import com.example.haseef4.displayProducts.productAdapterStaff;
+import com.example.haseef4.displayProducts.productAdapterStaffArduino;
 import com.example.haseef4.displayProducts.productModelArduino;
 import com.example.haseef4.displayProducts.product_adapterArduino;
 import com.example.haseef4.notification;
@@ -64,7 +66,7 @@ public class restockfragment1 extends Fragment {
                     toNotifyProductsArduino.add(P);
                     Triggernotification(P.getName());
                 }
-                product_adapterArduino adapter = new product_adapterArduino(getContext(), dairyPlist);
+                productAdapterStaffArduino adapter = new productAdapterStaffArduino(getContext(), dairyPlist);
                 productList.setAdapter(adapter);
             }
 

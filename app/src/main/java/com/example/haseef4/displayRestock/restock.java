@@ -97,8 +97,8 @@ public class restock extends AppCompatActivity {
 
 
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs2);
-        viewPager = (ViewPager) findViewById(R.id.view_pager2);
+        tabLayout = (TabLayout) findViewById(R.id.tabs3);
+        viewPager = (ViewPager) findViewById(R.id.view_pager3);
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new restockfragment1(), "Dairy products");
         viewPagerAdapter.addFragment(new restockfragment2(), "Juices");

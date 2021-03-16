@@ -21,6 +21,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.haseef4.R;
+import com.example.haseef4.displayProducts.productAdapterStaff;
 import com.example.haseef4.displayProducts.productModel;
 import com.example.haseef4.displayProducts.product_adapter;
 import com.example.haseef4.notification;
@@ -59,7 +60,7 @@ public class restockfragment3 extends Fragment {
                     toNotifyProducts.add(P);
                     Triggernotification(P.getName());
                 }
-                product_adapter adapter = new product_adapter(getContext(), chocolatePlist);
+                productAdapterStaff adapter = new productAdapterStaff(getContext(), chocolatePlist);
                 productList.setAdapter(adapter);
             }
 

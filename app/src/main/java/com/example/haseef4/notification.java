@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.example.haseef4.displayProducts.productAdapterStaff;
+import com.example.haseef4.displayProducts.productAdapterStaffArduino;
 import com.example.haseef4.displayProducts.productModel;
 import com.example.haseef4.displayProducts.productModelArduino;
 import com.example.haseef4.displayProducts.product_adapter;
@@ -26,10 +28,10 @@ public class notification extends AppCompatActivity {
 
         list = (ListView) findViewById(R.id.toNotify_listview);
         list2 = (ListView) findViewById(R.id.toNotify_listview2);
-        product_adapter adapter = new product_adapter(getBaseContext(), toNotifyProducts);
+        productAdapterStaff adapter = new productAdapterStaff(getBaseContext(), toNotifyProducts);
         list.setAdapter(adapter);
 
-        product_adapterArduino adapter2 = new product_adapterArduino(getBaseContext(), toNotifyProductsArduino);
+        productAdapterStaffArduino adapter2 = new productAdapterStaffArduino(getBaseContext(), toNotifyProductsArduino);
         list2.setAdapter(adapter2);
 
         ImageView back_icons = findViewById(R.id.back);

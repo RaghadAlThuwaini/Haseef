@@ -17,14 +17,16 @@
 
         android:visibility="visible"
         tools:visibility="visible" />
+
     <TextView
-        android:text="Product name:"
         android:id="@+id/productName_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:text="Product name:"
+        android:textColor="#3F51B5"
         android:visibility="visible"
         tools:visibility="visible" />
     <TextView
@@ -38,18 +40,20 @@
         android:visibility="visible"
         tools:visibility="visible"
         android:layout_marginStart="260dp" />
+
     <TextView
-        android:layout_below="@+id/productCompany_txt"
         android:id="@+id/productRestock_txt"
-        android:text="Product restock:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/productCompany_txt"
+        android:layout_marginStart="150dp"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:text="Product restock:"
+        android:textColor="#3F51B5"
         android:visibility="visible"
-        tools:visibility="visible"
-        android:layout_marginStart="150dp" />
+        tools:visibility="visible" />
 
     <TextView
         android:layout_below="@+id/productName"
@@ -62,18 +66,21 @@
         android:visibility="visible"
         tools:visibility="visible"
         android:layout_marginStart="260dp" />
+
     <TextView
-        android:layout_below="@+id/productName_txt"
         android:id="@+id/productCompany_txt"
-        android:text="Company:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/productName_txt"
+        android:layout_marginStart="150dp"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:shadowColor="#FFFFFF"
+        android:text="Company:"
+        android:textColor="#3F51B5"
         android:visibility="visible"
-        tools:visibility="visible"
-        android:layout_marginStart="150dp" />
+        tools:visibility="visible" />
 
     <TextView
         android:layout_below="@+id/productRestock"
@@ -86,18 +93,20 @@
         android:visibility="visible"
         tools:visibility="visible"
         android:layout_marginStart="260dp" />
+
     <TextView
-        android:layout_below="@+id/productRestock_txt"
         android:id="@+id/productID_txt"
-        android:text="Product ID:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/productRestock_txt"
+        android:layout_marginStart="150dp"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:text="Product ID:"
+        android:textColor="#3F51B5"
         android:visibility="visible"
-        tools:visibility="visible"
-        android:layout_marginStart="150dp" />
+        tools:visibility="visible" />
 
 
     <TextView

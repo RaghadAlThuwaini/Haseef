@@ -19,13 +19,14 @@
         />
 
     <TextView
-        android:text="Staff name:"
         android:id="@+id/staffName_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:text="Staff name:"
+        android:textColor="#3F51B5"
         android:visibility="visible"
         tools:visibility="visible" />
 
@@ -41,14 +42,15 @@
         tools:visibility="visible" />
 
     <TextView
-        android:layout_below="@+id/staffName_txt"
         android:id="@+id/StaffID_txt"
-        android:text="Staff ID:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/staffName_txt"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:text="Staff ID:"
+        android:textColor="#3F51B5"
         android:visibility="visible"
         tools:visibility="visible" />
 
@@ -64,14 +66,15 @@
         tools:visibility="visible" />
 
     <TextView
-        android:text="Staff age:"
         android:id="@+id/age_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/StaffID_txt"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_below="@+id/StaffID_txt"
+        android:text="Staff age:"
+        android:textColor="#3F51B5"
         android:visibility="visible"
         tools:visibility="visible" />
 
@@ -87,14 +90,15 @@
         tools:visibility="visible" />
 
     <TextView
-        android:text="Staff location:"
         android:id="@+id/location_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/age_txt"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_below="@+id/age_txt"
+        android:text="Staff location:"
+        android:textColor="#3F51B5"
         android:visibility="visible"
         tools:visibility="visible" />
 
@@ -110,14 +114,15 @@
         tools:visibility="visible" />
 
     <TextView
-        android:text="working since:"
         android:id="@+id/working_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/location_txt"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_below="@+id/location_txt"
+        android:text="working since:"
+        android:textColor="#3F51B5"
         android:visibility="visible"
         tools:visibility="visible" />
 
