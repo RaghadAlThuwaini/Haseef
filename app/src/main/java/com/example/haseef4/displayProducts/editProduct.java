@@ -56,7 +56,7 @@ public class editProduct extends AppCompatActivity {
             company = getIntent().getExtras().getString("company");
             image = getIntent().getExtras().getString("Image");
 
-
+//
             //catch txt input from editStaff.xml
             nameIn = findViewById(R.id.ProductNameEdit);
             IDIn = findViewById(R.id.ProductIDEdit);
