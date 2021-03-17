@@ -8,7 +8,7 @@
 
 
     <include
-        layout="@layout/toolbar"
+        layout="@layout/toolbar_admin"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -179,7 +179,6 @@
         android:layout_height="45dp"
         android:background="#FFFFFF"
         android:scaleY="8"
-        android:tint="#F8B6B6B6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
@@ -187,7 +186,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.53"
         app:srcCompat="@drawable/ic_vertical_line"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat"
+        app:tint="#F8B6B6B6" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

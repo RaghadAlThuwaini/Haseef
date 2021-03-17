@@ -30,7 +30,7 @@ public class popUpWindow extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(popUpWindow.this,statistic.class));
+               finish();
             }
         });
 

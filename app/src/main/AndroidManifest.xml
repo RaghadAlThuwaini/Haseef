@@ -22,7 +22,14 @@
         <activity android:name=".displayProducts.editProduct" />
         <activity android:name=".displayProducts.product_Staff" />
         <activity android:name=".notification" />
+        <activity android:name=".popUpWindow" />
+        <activity android:name=".popUpWindow2" />
+        <activity android:name=".popUpWindow3" />
+        <activity android:name=".popUpWindow4" />
+        <activity android:name=".popUpWindow5" />
+        <activity android:name=".popUpWindow6" />
         <activity android:name=".addStaff" />
+        <activity android:name=".statistic" />
         <activity android:name=".editStaff" />
         <activity android:name=".setting" /> <!-- <activity -->
         <!-- android:name=".displayRestock.restock" -->
