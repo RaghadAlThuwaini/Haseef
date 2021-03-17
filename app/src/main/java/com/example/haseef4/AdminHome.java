@@ -58,6 +58,12 @@ public class AdminHome extends AppCompatActivity {
                 goToStaff();
             }
         });
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSetting();
+            }
+        });
 
         staff_icons.setOnClickListener(new View.OnClickListener() {
             @Override

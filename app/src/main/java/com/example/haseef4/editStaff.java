@@ -3,6 +3,7 @@ package com.example.haseef4;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -24,6 +25,13 @@ public class editStaff extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ImageView setting = findViewById(R.id.setting);
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSetting();
+            }
+        });
         SRef = FirebaseDatabase.getInstance().getReference();
         //get from previous intent
         setContentView(R.layout.activity_edit_staff);
@@ -79,7 +87,10 @@ public class editStaff extends AppCompatActivity {
             }
         });
 
-}
 
+}
+    public void goToSetting(){
+        startActivity(new Intent(this, setting.class));
+    }
 
     }

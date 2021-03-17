@@ -52,6 +52,7 @@ public class addStaff extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ImageView setting = findViewById(R.id.setting);
         setContentView(R.layout.activity_add_staff);
         staffname = findViewById(R.id.staffnametext);
         staffid = findViewById(R.id.staffidtext);
@@ -71,6 +72,12 @@ public class addStaff extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSetting();
             }
         });
         insertstaff.setOnClickListener(new View.OnClickListener() {
@@ -184,6 +191,9 @@ public class addStaff extends AppCompatActivity {
         ContentResolver cr=getContentResolver();
         MimeTypeMap mime=MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cr.getType(mUri));
+    }
+    public void goToSetting(){
+        startActivity(new Intent(this, setting.class));
     }
 }
 

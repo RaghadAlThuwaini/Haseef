@@ -32,7 +32,13 @@ public class displayStaff extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_staff);
-
+        ImageView setting = findViewById(R.id.setting);
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSetting();
+            }
+        });
         staffList = (ListView) findViewById(R.id.staffList_view);
         List = new ArrayList<>();
 
@@ -95,6 +101,9 @@ public class displayStaff extends AppCompatActivity {
     public void goToAddStaff(){
         Intent intent = new Intent(this, addStaff.class);
         startActivity(intent);
+    }
+    public void goToSetting(){
+        startActivity(new Intent(this, setting.class));
     }
 //    public void goToNotification(){
 //        startActivity(new Intent(this, notification.class));

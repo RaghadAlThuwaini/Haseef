@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.example.haseef4.R;
 import com.example.haseef4.addproducts;
 import com.example.haseef4.notification;
+import com.example.haseef4.setting;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.viewpager.widget.ViewPager;
@@ -26,6 +27,13 @@ public class product_Staff extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product__staff);
+        ImageView setting = findViewById(R.id.setting);
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSetting();
+            }
+        });
 
         tabLayout = (TabLayout) findViewById(R.id.tabs2);
         viewPager = (ViewPager) findViewById(R.id.view_pager2);
@@ -59,6 +67,9 @@ public class product_Staff extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    public void goToSetting(){
+        startActivity(new Intent(this, setting.class));
     }
     public void goToNotification(){
         startActivity(new Intent(this, notification.class));
