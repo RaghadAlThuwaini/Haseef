@@ -22,6 +22,7 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/arvo"
         android:text="Name: Nestle KitKat"
         android:textColor="#4341CA"
         android:textSize="20sp"
@@ -32,39 +33,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.872" />
 
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="The best product for today is"
-        android:textColor="#2D36CB"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView12"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="53dp" />
-
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="242dp"
         android:layout_height="138dp"
+        android:layout_marginBottom="76dp"
         app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
         app:srcCompat="@drawable/kitkat" />
 
     <ImageButton
         android:id="@+id/xbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/textView16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.132"
         app:srcCompat="@android:drawable/ic_delete" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
