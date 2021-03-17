@@ -54,7 +54,6 @@ public class product_adapter extends ArrayAdapter<productModel> {
         productCompany=(TextView)convertView.findViewById(R.id.productCompany);
         productID = (TextView) convertView.findViewById(R.id.productID);
         productRestock = (TextView) convertView.findViewById(R.id.productRestock);
-        product_number = (TextView) convertView.findViewById(R.id.productNumber);
         imageView = convertView.findViewById(R.id.productImage);
         delete=convertView.findViewById(R.id.deleteBtnProduct);
         edit=convertView.findViewById(R.id.editBtnProduct);
