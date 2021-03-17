@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:id="@+id/nameLayout">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ProductNameEdit"
             android:layout_width="150dp"
@@ -100,10 +101,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
-        android:textColor="#3F51B5"
         android:layout_marginTop="200dp"
         android:layout_marginBottom="5dp"
+        android:fontFamily="@font/arvo"
         android:text="Product name:"
+        android:textColor="#3F51B5"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -144,6 +146,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
+        android:fontFamily="@font/arvo"
         android:text="Product ID:"
         android:textColor="#3F51B5"
         android:visibility="visible"
@@ -186,6 +189,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
+        android:fontFamily="@font/arvo"
         android:text="Number of items:"
         android:textColor="#3F51B5"
         android:visibility="visible"
@@ -227,6 +231,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
+        android:fontFamily="@font/arvo"
         android:text="Company:"
         android:textColor="#3F51B5"
         android:visibility="visible"
@@ -280,37 +285,40 @@
     <Button
         android:id="@+id/updateBtnProduct"
         android:layout_width="150dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="60dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/company_txt"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/arvo"
+        android:onClick="update"
         android:text="Update"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597"
-        android:onClick="update"/>
+        app:layout_constraintVertical_bias="0.597" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_height="wrap_content"
+        android:id="@+id/companyLayout"
         android:layout_width="match_parent"
-        android:id="@+id/companyLayout">
+        android:layout_height="wrap_content">
 
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/companyEdit"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="290dp"
-        android:layout_marginBottom="5dp"
-        android:gravity="center_vertical"
-        android:paddingTop="0dp"
-        android:paddingBottom="0dp"
-        android:visibility="visible"
-        tools:visibility="visible" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/companyEdit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="290dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:visibility="visible"
+            tools:visibility="visible" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </RelativeLayout>

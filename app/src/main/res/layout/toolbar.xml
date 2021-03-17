@@ -1,47 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#C660AA92">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
+
         <ImageView
+            android:id="@+id/setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_baseline_settings_24"
             android:layout_alignParentRight="true"
-            android:padding="16dp"
-            android:id="@+id/setting"
             android:layout_centerVertical="true"
-            />
+            android:padding="16dp"
+            android:src="@drawable/ic_baseline_settings_24" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/ic_baseline_notifications_24"
             android:id="@+id/notifications"
-            android:layout_centerVertical="true"/>
-
-        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:src="@drawable/ic_baseline_arrow_back_24"
-            android:id="@+id/back"
             android:layout_centerVertical="true"
-            />
+            android:layout_marginLeft="50dp"
+            android:padding="16dp"
+            android:src="@drawable/ic_baseline_notifications_24" />
 
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="16dp"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
 
 
     </RelativeLayout>
