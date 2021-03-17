@@ -60,7 +60,7 @@ public class addproducts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addproducts);
-
+        ImageView setting = findViewById(R.id.setting);
         adproduct = findViewById(R.id.adproduct);
         addcompany = findViewById(R.id.addcompany);
         addlocation = findViewById(R.id.addlocation);
@@ -100,7 +100,12 @@ public class addproducts extends AppCompatActivity {
                 goToNotification();
             }
         });
-
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSetting();
+            }
+        });
         btInsertDataJuices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -410,8 +415,11 @@ public class addproducts extends AppCompatActivity {
     public void goToNotification(){
         startActivity(new Intent(this, notification.class));
     }
-
+    public void goToSetting(){
+        startActivity(new Intent(this, setting.class));
+    }
 }
+
 
 
 

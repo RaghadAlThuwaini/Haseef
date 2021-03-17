@@ -26,6 +26,7 @@ import com.example.haseef4.displayProducts.product;
 import com.example.haseef4.displayProducts.productModel;
 import com.example.haseef4.displayProducts.product_adapter;
 import com.example.haseef4.notification;
+import com.example.haseef4.setting;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -58,6 +59,13 @@ public class restock extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restock);
+        ImageView setting = findViewById(R.id.setting);
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSetting();
+            }
+        });
 //        Sref = FirebaseDatabase.getInstance().getReference("Sensors");
 //        Pref = FirebaseDatabase.getInstance().getReference("products");
 //
@@ -125,7 +133,9 @@ public class restock extends AppCompatActivity {
     public void goToNotification(){
         startActivity(new Intent(this, notification.class));
     }
-
+    public void goToSetting(){
+        startActivity(new Intent(this, setting.class));
+    }
 
 //}
 //        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
