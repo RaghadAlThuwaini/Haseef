@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="260dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="10dp"
 
         android:visibility="visible"
@@ -22,8 +22,8 @@
         android:id="@+id/productName_txtStaff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/arvo"
         android:text="Product name:"
@@ -35,20 +35,18 @@
         android:id="@+id/productRestockStaff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="7dp"
         android:layout_marginBottom="10dp"
         android:visibility="visible"
-        tools:visibility="visible"
-        android:layout_marginStart="260dp" />
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/productRestock_txtStaff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/productCompany_txtStaff"
-        android:layout_marginStart="150dp"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/arvo"
@@ -62,20 +60,18 @@
         android:id="@+id/productCompanyStaff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="260dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:visibility="visible"
-        tools:visibility="visible"
-        android:layout_marginStart="260dp" />
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/productCompany_txtStaff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/productName_txtStaff"
-        android:layout_marginStart="150dp"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/arvo"
@@ -90,19 +86,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="260dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="7dp"
         android:layout_marginBottom="10dp"
         android:visibility="visible"
-        tools:visibility="visible"
-        android:layout_marginStart="260dp" />
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/productID_txtStaff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/productRestock_txtStaff"
-        android:layout_marginStart="150dp"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/arvo"
@@ -112,17 +106,6 @@
         tools:visibility="visible" />
 
 
-    <TextView
-        android:layout_below="@+id/productIDStaff"
-        android:id="@+id/productNumberStaff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="260dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:visibility="visible"
-        tools:visibility="visible"
-        android:layout_marginStart="260dp" />
 
     <ImageView
         android:id="@+id/productImageStaff"
@@ -138,6 +121,6 @@
         android:layout_marginRight="6dp"
         android:layout_marginBottom="6dp"
         android:layout_marginLeft="20dp"
-        android:layout_below="@+id/productNumberStaff"/>
+        android:layout_below="@+id/productID_txt"/>
 
 </RelativeLayout>

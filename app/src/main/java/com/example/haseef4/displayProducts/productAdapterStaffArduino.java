@@ -53,7 +53,6 @@ public class productAdapterStaffArduino extends ArrayAdapter<productModelArduino
         productCompany=(TextView)convertView.findViewById(R.id.productCompanyStaff);
         productID = (TextView) convertView.findViewById(R.id.productIDStaff);
         productRestock = (TextView) convertView.findViewById(R.id.productRestockStaff);
-        product_number = (TextView) convertView.findViewById(R.id.productNumberStaff);
         imageView = convertView.findViewById(R.id.productImageStaff);
 
 
