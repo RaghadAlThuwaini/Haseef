@@ -1,10 +1,13 @@
 package com.example.haseef4.displayProducts;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class productModelArduino {
 
     String name,company,product_id, image;
     long restock, weight2, itemWeight;
-    DatabaseReference PRef;
+    long weightPerItem;
+    DatabaseReference PRef = FirebaseDatabase.getInstance().getReference();
 
 
     public productModelArduino(String name, String company, String products_id, String image, long restock, long weight2, long itemWeight) {
@@ -59,6 +62,25 @@ public class productModelArduino {
     public void setImage(String image) {
         this.image = image;
     }
+    public long getWeightPerItem() {
+        return weightPerItem;
+    }
+
+    public void setWeightPerItem(long weightPerItem) {
+        this.weightPerItem = weightPerItem;
+    }
+    public void setWeight2(long weight2) {
+//        if(weight2==0){
+//            setRestock((long) 0);
+//    }
+        long w = Math.abs(weightPerItem);
+        setRestock((long)(weight2/w));
+//        if(getItemWeight()>0L)
+//            setRestock((long)(weight2/getItemWeight()));
+        PRef.child("productArduino").child("dairyProducts").child(getProduct_id()).child("restock").setValue((long)(weight2/w));
+    }
+
+
 
     public long getRestock() {
         return restock;
@@ -72,12 +94,5 @@ public class productModelArduino {
         return weight2;
     }
 
-    public void setWeight2(long weight2) {
-        if(weight2==0){
-            setRestock((long) 0);
-    }
-//        if(getItemWeight()>0L)
-//            setRestock((long)(weight2/getItemWeight()));
-         //PRef.child("productArduino").child("dairyProducts").child("D1").child("restock").setValue(0);
-        }
+
     }
