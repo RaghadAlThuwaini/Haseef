@@ -72,19 +72,45 @@ public class product_adapter extends ArrayAdapter<productModel> {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PRef.child(P.getProduct_id()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(getContext(), "product deleted", LENGTH_LONG).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(), "Error", LENGTH_LONG).show();
-                    }
-
-
-                });
+                if(P.getProduct_id().startsWith("C")) {
+                    PRef.child("Chocolate").child(P.getProduct_id()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(getContext(), "product deleted", LENGTH_LONG).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getContext(), "Error", LENGTH_LONG).show();
+                        }
+                    });
+                }
+                if(P.getProduct_id().startsWith("D")) {
+                    PRef.child("dairyProducts").child(P.getProduct_id()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(getContext(), "product deleted", LENGTH_LONG).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getContext(), "Error", LENGTH_LONG).show();
+                        }
+                    });
+                }
+                if(P.getProduct_id().startsWith("J")) {
+                    PRef.child("Juices").child(P.getProduct_id()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(getContext(), "product deleted", LENGTH_LONG).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getContext(), "Error", LENGTH_LONG).show();
+                        }
+                    });
+                }
             } });
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
